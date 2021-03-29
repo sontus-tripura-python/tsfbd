@@ -1,0 +1,385 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.tsf_logo_leader{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+}
+/*--- pagintion css --*/
+.search_input{
+  padding: 4px;
+  border-radius: 5px;
+}
+.pagination_section{
+  background: #8cc7e3;
+  padding: 5px;
+  height: 50px;
+}
+.loader{
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #56d782;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader.hidden{
+  animation: fadeOut 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.preloading{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  animation: loader 2s linear infinite;
+}
+@keyframes loader {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+}
+a:hover{
+  text-decoration: none;
+}
+.page-link{
+
+  text-decoration: none;
+}
+.bodysection{
+position: relative;
+  overflow: hidden;
+  background: #ddd;
+min-height: 700px;
+}
+.banner_section{
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.banner_header_title{
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.logoheder{
+  height: 120px;
+  background: #fff;
+  overflow: hidden;
+  border-radius:10px 10px 0px 0px;
+  box-shadow: 2px 3px 2px 3px #ccc;
+  
+   
+}
+.dignity{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.tsf-logo-box{
+  text-align: center;
+float: left;
+width: 16%;
+
+  
+ 
+}
+.tsf_logo_banner{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+
+}
+.tsf-text-box{
+  margin-left: -22px;
+  text-align: center;
+  width: 68%;
+ 
+  float: left;
+}
+.tsf_flag_banner{
+  height: 80px;
+  width: 120px;
+}
+.tsf-flag-box{
+  text-align: center;
+  float: left;
+  width: 16%;
+
+}
+.banner_text{
+  margin-top: 20px;
+ font-weight: bold;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+/*-------- social icon css-----*/
+.social-area{
+	padding:10px 0px;
+	z-index:99;
+	position:fixed;
+	right:0;
+	top:40%;
+
+}
+.social-area li{
+	list-style:none;
+
+}
+.icons {
+ padding:10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color:#fff!important;
+}
+
+.icons:hover {
+    opacity: 0.7;
+}
+
+.fb {
+  background: #3B5998;
+
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin-in {
+  background: #007bb5;
+  color: white;
+}
+
+.Youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.instgrm{
+  background:#E4405F;
+  color: white;
+}
+
+/* nabar section----- */
+
+#nav_section{
+  border-top:1px solid #000;
+border-bottom:1px solid #000;
+background:#222!important;
+
+    z-index: 999;
+}
+.navheader{
+  background:#222!important;
+}
+.navbar-toggler{
+  background: #ddd !important;
+}
+.nav-link{
+  color: #fff!important;
+  font-size: 24px;
+  /* font-style: italic; */
+  font-family: 'Poppins', sans-serif;
+  padding: 8px;
+}
+.nav-item:hover{
+  background:   #168470;
+
+  border-radius: 5px;
+}
+.selected{
+  background:   #168470;
+
+  border-radius: 5px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+.navbar-brand{
+  color: #fff !important;
+  font-size: 30px;
+  /* font-style: italic; */
+  font-weight: bolder;
+
+  font-family: monospace;
+}
+/*----- slider section----*/
+
+.slider-owl-carousels{
+  width: 100%;
+}
+
+.home_slider_box:hover{
+  opacity: 0.9;
+font-weight: bold;
+  color: #222;
+}
+/*---- tsf leader -----*/
+
+.tsf_leader_introduction{
+  background: #fafafa;
+  padding: 20px 10px;
+}
+.tsf_info_about{
+  margin-top: 20px;
+  text-align: justify;
+}
+.tsf_leader_profile_img{
+  height: 200px;
+  width: 200px;
+  border: 1px solid #222;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.tsf_leader_profile_img:hover{
+  transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0,0,0.1), -5px -5px 10px #fff; 
+    cursor: pointer;
+}
+.tsf_leader_name{
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+ 
+  /* font-style: italic; */
+  text-transform: capitalize;
+}
+.tsf_leadr_postion{
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: #007bb5;
+  font-weight: bold;
+  /* font-style: italic; */
+  text-transform: capitalize;
+}
+.home_tsf_logo{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  animation: logo 5s linear infinite;
+}
+
+.tsf_name_title{
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  /* font-style: italic; */
+  font-weight: bold;
+}
+.tsf_name_title:after{
+  content: '';
+  display: block;
+  width: 150px;
+  height: 5px;
+  background: green;
+  margin: 5px auto;
+  border-radius: 10px;
+ 
+}
+/*---- glance section----*/
+
+.glance_section{
+  background:  #26c98b;
+color: #fff;
+justify-content: space-between;
+min-height: 400px;
+
+}
+.glance_title{
+  text-align: center;
+  font-style: 22px;
+  font-weight: bold;
+
+}
+.glance_title:after{
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #fff;
+  margin: 8px auto;
+  border-radius: 10px;
+}
+.student_category_name{
+  font-size: 22px;
+  font-style: italic;
+}
+.student_count{
+  font-size: 22px;
+  font-style: italic;
+  text-transform: capitalize;
+  color: #000;
+}
+.students_books{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.student_category_box{
+  margin: 10px;
+  padding: 40px 30px;
+  border-radius: 10px;
+ position: relative;
+ background: #fafafa;
+  min-height: 200px;
+ text-align: center;
+ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+ transition: all .5s ease-in-out 0s;
+
+}
+/* ---latest news section--- */
+.latest_news_title{
+   text-align: center;
+   color: #fff;
+   font-size: 22px;
+  padding: 10px 0px;
+
+}
+.latest_news_title::after{
+  content: '';
+  display: block;
+  background: cyan;
+  height: 3px;
+  width: 150px;
+  margin: 8px auto;
+}
+.latest_news_heading{
+  font-size: 20px;
+
+}
+.latest_news_section{
+ background: #168470;
+ min-height: 400px;
+
+}
+.latest_news{
+  margin: 10px;
+}

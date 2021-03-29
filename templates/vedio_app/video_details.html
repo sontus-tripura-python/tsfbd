@@ -1,0 +1,81 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<section class="vedio_details_secton">
+    <div class="container">
+        <div class="row justify-content-center">
+         <div class=" col-md-8 card">
+             <div class="card-body">
+                 <h2 class="vedio_title">{{ video.title}}</h2>
+
+                <video controls autoplay>
+                    <source src="{{ video.vedio.url}}" type="video/mp4">
+                 
+                  </video>     
+                  <a href="{{ video.vedio.url}}" class="btn btn-info">Download</a>
+                  <a href="" class="btn btn-danger">Download Option still not fix</a>
+                  <p>Description: {{ video.description|linebreaksbr}}</p>
+             </div>
+           
+               <div class="similar_vedion">
+                <h2 class="similiar_vedio_heading">similiar vedio</h2>
+
+             
+                    {% for video in similiar_vedio %}
+                    <div class="similiar_vedio_box">
+                      <a href="{% url 'vedio_details' video.slug %}">
+                      <div>
+                        <img class="similiar_vedio_poster" src="{{ video.thumbnail.url }}" class="img-fluid" alt="">
+                      </div>
+                    </a>
+                    </a>
+                      <a href="{% url 'vedio_details' video.slug %}">{{ video.title}}</a>
+                    </div>
+                    {% empty %}
+                    <div class="alert alert-danger" role="alert">
+                      there is no similiar viedo .
+                    </div>
+                    {% endfor %}
+              
+               </div>
+
+               <div class="vedio_comment_box">
+                <form method="POST">
+                  {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-primary btn-block">Submit</button>
+                </form>
+              </div>
+              <div class="comment_list">
+                {% for comment in video.vedio_comment.all %}
+               <div class="vedio_comment">
+                 <h1><strong>{{ forloop.counter }} .</strong></h1>
+                  <strong>Time: {{ comment.date }}</strong>
+                <h4 class="user_comment_name">
+
+                   Name: {{ comment.name }}
+                  </h4>
+                <q class="comments">
+                  {{ comment.comment}}
+
+                </q>
+                   
+             
+               </div>
+               {% empty %}
+               <div class="alert alert-danger" role="alert">
+               there is no comment yet now
+              </div>
+                <hr>
+                {% endfor %}
+              </div>
+         </div>
+    
+        </div>
+    </div>
+  
+</section>
+
+{% endblock %}

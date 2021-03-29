@@ -1,0 +1,60 @@
+{% extends 'home/base.html' %}
+{% block body %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header">
+          {% if news.publish_date %}
+       <div class="date">
+            {{ news.publish_date }}
+       </div>
+ {% else %}
+  <span class="publish_div">
+     <a href="{% url 'news_publish' news.slug news.pk %}" class="btn btn-primary">publish</a>
+  </span>
+{% endif %}
+{% if user.is_superuser %}
+<a href="{% url 'news_edit' news.slug news.pk %}" class="btn btn-danger"><i class="fas fa-edit"></i></a>
+<a href="{% url 'news_delete' news.slug news.pk %}" class="btn btn-danger"
+ onclick="return confirm('are you sure want to delete?')">Delete</a>
+{% endif %}
+    
+      <h3>{{ news.title }}</h3>
+        </div>
+        <div class="card-body">
+          <img src="{{ news.image.url }}" alt="News image" class="news_image">
+          <p class="news_description justify-content-center">{{ news.news_description|safe}}</p>
+        </div>
+        <div class="card-footer">
+      <h5 class="posted_name"> Posted By : <a href="{{ news.facebook }}">{{ news.posted_name }}</a></h5>
+        </div>
+        
+        <div class="comment_box">
+          <button type="button" class="btn btn-primary">
+            Total Comments <span class="badge badge-light">{{ news.news_comment.count }}</span>
+          </button>
+          <form action="" method="POST">
+            {% csrf_token %}
+          {{ form|crispy }}
+          <button class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+       
+        <div class="comment_list">
+          {% for comment in news.news_comment.all %}
+          <h4>
+            <a href="{% url 'view_profile' comment.user.pk %}" class="user_comment_name">
+              <img src="{{ comment.user.profile.photo.url }}" alt="" height="60" width="60" class="comment_user_photo">
+            {{ comment.user.first_name }} {{ comment.user.last_name }}</a></h4>
+            <p class="comments_date"><strong>{{ comment.comment_date }}</strong></p>
+          <p class="comments_user">{{ comment.comment}}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

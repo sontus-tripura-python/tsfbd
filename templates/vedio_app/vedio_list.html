@@ -1,0 +1,72 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 card vedio_section">
+      <div class="card-body">
+        <marquee direction="left" height="100px" style="color: red;">
+         Vedio functionality is still under development. there will bring all changed.
+          </marquee>
+        <div class="text-center">
+          <input type="text" class="form-control" placeholder="Video Search Here.." >
+        </div>
+        {% for vedio in vedio_lists %}
+      <div class="vedio_list">
+       <a href="{% url 'vedio_details' vedio.slug %}">
+        <div class="poster_section">
+          <img class="poster_logo" src="{{ vedio.thumbnail.url }}" class="img-fluid" alt="">
+        </div>
+        <div class="player_section">
+          <img src="{% static 'img/player.jpg' %}" alt="" class="playper_logo">
+        </div>
+       </a>
+        <h2 class="vedio_title">Song Name  : <a href="{% url 'vedio_details' vedio.slug %}">{{ vedio.title}}</a></h2>
+     <div class="text-center">
+      <a href="{% url 'vedio_details' vedio.slug %}" class="btn btn-primary">Watch Now</a>
+
+     </div>
+      </div>
+      {% empty %}
+      <div class="alert alert-danger" role="alert">
+        there is no video avaible now..
+      </div>
+      <hr>
+          {% endfor %}
+          <section class="pagination_section">
+            <div class="container text-center">
+              {% if vedio_lists.has_previous %}
+            
+             <a class="btn btn-outline-primary" href="?page={{ vedio_lists.previous_page_number}}">
+            Previous
+             </a>
+               <a class="btn btn-outline-primary" href="?page=1">First</a>
+            
+            {% endif %}
+              {% for page in vedio_lists.paginator.page_range %}
+              {% if vedio_lists.number == page %}
+            <a class=" btn btn-primary" href="?page={{ page }}">{{ page }}</a>
+              {% elif page > vedio_lists.number|add:'-3' and  page > vedio_lists.number|add:'3' %}
+              <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+              {% else %}
+              <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+              {% endif %}
+              {% endfor %}
+              {% if vedio_lists.has_next %}
+            
+            
+                  <a class="btn btn-outline-primary" href="?page={{ vedio_lists.paginator.num_pages }}">
+                  Next
+                  </a>
+                  <a class="btn btn-outline-primary" href="?page={{ vedio_lists.next_page_number}}">Last </a>
+            
+                {% endif %}
+            </div>
+            </section>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+{% endblock %}

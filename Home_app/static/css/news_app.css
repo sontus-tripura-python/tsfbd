@@ -1,0 +1,56 @@
+.news_section{
+  background: #fff;
+  min-height: 600px;
+ 
+}
+
+.news_list{
+  margin: 10px;
+  overflow: hidden;
+}
+.pagination_section{
+  background: #4e4e4e;
+}
+.pagination_box{
+  text-align:center;
+  background: #fff;
+}
+.news_image{
+  width: 100%;
+  height: 200px;
+}
+.news_publish_date{
+  font-weight: bold;
+}
+.news_description{
+  text-align: justify;
+}
+.posted_name{
+  font-weight: bold;
+  font-style: italic;
+}
+.comment_box{
+  margin: 10px;
+  overflow: hidden;
+
+  width: 300px;
+}
+.comment_user_photo{
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.comment_list{
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.user_comment_name{
+  font-size: 16px;
+}
+.comments_user{
+  margin: 0;
+  padding: 0;
+}
+.comments_date{
+  margin: 0;
+  padding: 0;
+}

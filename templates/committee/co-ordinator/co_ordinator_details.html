@@ -1,0 +1,44 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+<section style="min-height: 550px;">
+<div class="container">
+  <div class="row justify-content-center">
+<div class="col-md-8">
+  <div class="card central_leeader_detail_section">
+    <div class="card-body">
+      {% if user.is_superuser %}
+ <a href="{% url 'coordinator_update' Coordinatordetail.slug Coordinatordetail.pk %}" class="btn btn-primary">Update</a>
+ <a href="{% url 'co_ordinator_delete' Coordinatordetail.slug Coordinatordetail.pk %}" class="btn btn-danger">Delete</a>
+ {% endif %}
+<div class="text-center">
+  <img src="{{Coordinatordetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
+  <h2 class="leader_name">{{Coordinatordetail.name }}</h2>
+  <h2 class="posting"> {{Coordinatordetail.position }}</h2>
+</div>
+
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">About : <span class="name_of_profile">{{Coordinatordetail.about_description }}</span></h2>
+
+  </li>
+</ul>
+
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="social_link"> Follow :
+      <a href="{{Coordinatordetail.facebook}}"><i class="fab fa-facebook-f fbcolor"></i></a>
+      <a href="{{ Coordinatordetail.twitter}}"><i class="fab fa-twitter twittercolor"></i></a>
+      <a href="{{ Coordinatordetail.instagram}}"><i class="fab fa-instagram instagramcolor"></i></a>
+       <a href="{{ Coordinatordetail.linkdin}}"><i class="fab fa-linkedin-in link-IN "></i></a>
+    </h2>
+
+  </li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+</section>
+{% endblock %}

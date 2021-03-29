@@ -1,0 +1,23 @@
+
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<section style="min-height: 550px;">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 card" style="min-height: 400px;">
+            <div class="card-body">
+                {% for detail in categories_details %}
+                <h2>{{ detail.title }}</h2>
+                <p>{{ detail.description|safe }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+
+<div class="container">
+  <div class="row justify-content-center">
+<div class="col-md-8">
+  <div class="card central_leeader_detail_section">
+    <div class="card-body">
+      {% if user.is_superuser %}
+  <a href="{% url 'branch_member_delete' Branchdetail.slug Branchdetail.pk %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'member_details_update' Branchdetail.slug Branchdetail.pk %}" class="btn btn-danger">Update</a>
+  {% endif %}
+<div class="text-center">
+  <img src="{{Branchdetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
+  <h2 class="leader_name">{{Branchdetail.name }}</h2>
+  <h2 class="posting"> {{Branchdetail.position }}</h2>
+</div>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Phone : <span class="details_title">{{ Branchdetail.phone }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Blood Group : <span class="details_title">{{Branchdetail.blood_group }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Current Enroll : <span class="details_title">{{Branchdetail.current_enroll }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Gender : <span class="details_title">{{ Branchdetail.gender }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">District : <span class="details_title">{{ Branchdetail.district }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Village : <span class="details_title">{{ Branchdetail.village }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="title_name">Thana : <span class="details_title">{{ Branchdetail.thana }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group_box">
+  <li class="list-group-item ">
+    <h2 class="social_link"> Follow :
+      <a href="{{Branchdetail.facebook}}"><i class="fab fa-facebook-f fbcolor"></i></a>
+      <a href="{{ Branchdetail.twitter}}"><i class="fab fa-twitter twittercolor"></i></a>
+      <a href="{{ Branchdetail.instagram}}"><i class="fab fa-instagram instagramcolor"></i></a>
+       <a href="{{ Branchdetail.linkdin}}"><i class="fab fa-linkedin-in link-IN "></i></a>
+    </h2>
+
+  </li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+</div>
+{% endblock %}

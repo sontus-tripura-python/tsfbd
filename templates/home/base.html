@@ -1,0 +1,169 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!--- font awesome----------->
+  <!-- <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script> -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+   <link rel="stylesheet" href=" {% static 'js/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+  <script
+  src="https://kit.fontawesome.com/64d58efce2.js"
+  crossorigin="anonymous"
+></script>
+<!------- all plugin css call------->
+
+      <link rel="stylesheet" href="{% static 'css/style.css' %} " />
+<link rel="stylesheet" href="{% static 'css/home.css' %} " />
+<link rel="stylesheet" href="{% static 'css/slider.css' %} " />
+  <link rel="stylesheet" href="{% static 'css/leader_app.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/news_app.css' %} " />
+      <link rel="stylesheet" href="{% static 'css/profile_app.css' %} " />
+            <link rel="stylesheet" href="{% static 'css/footer.css' %} " />
+        <link rel="stylesheet" href="{% static 'css/contact.css' %} " />
+        <link rel="stylesheet" href="{% static 'css/vedio_app.css' %} " />
+          <link rel="stylesheet" href="{% static 'css/responsive.css' %} " />
+<link rel="shortcut icon" type="img/jpg" href="{% static 'img/tsf.jpg' %}">
+    <title>TSF.BD</title>
+</head>
+<body>
+
+
+
+<div class="bodysection">
+  {% include 'home/banner.html' %}
+  {% include 'home/navbar.html' %}
+
+
+
+
+
+
+       {% block body %}
+
+       {% endblock%}
+  <section class="footer_section">
+    {% include 'home/footer.html' %}
+  </section>
+   
+    </div>
+
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/regvalidation.js' %}"></script>
+<script src="{% static 'js/register-form.js' %}"></script>
+<script src="{% static 'js/search.js' %}" ></script>
+<script src="{% static 'js/contact.js' %}" ></script>
+
+<script type="text/javascript">
+$(function(){
+  new WOW().init();
+});
+</script>
+<script type="text/javascript">
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("nav_section");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    nav_section.classList.add("sticky")
+  } else {
+    nav_section.classList.remove("sticky");
+  }
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".slider-owl-carousels").owlCarousel({
+  items:1,
+  autoplay:true,
+  loop:true,
+  autoplayTimeout:5000,
+});
+})
+</script>
+<script type="text/javascript">
+  window.addEventListener("load", function(){
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden";
+  });
+</script>
+<script>
+   $("#id_username").change(function () {
+     var form = $(this).closest("form");
+     $.ajax({
+       url: form.attr("data-validate-username-url"),
+       data: form.serialize(),
+       dataType: 'json',
+       success: function (data) {
+         if (data.is_taken) {
+           alert(data.error_message);
+         }
+       }
+     });
+
+   });
+ </script>
+ 
+ <script>
+
+const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 768px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+        $this.find($dropdownMenu).removeClass(showClass);
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
+});
+ </script>
+ <!-- <script>
+  $(document).ready(function() {
+  $(document).on('click', '.nav-item a', function (e) {
+      $(this).parent().addClass('active').siblings().removeClass('active');
+  });
+});
+</script> -->
+</body>
+</html>

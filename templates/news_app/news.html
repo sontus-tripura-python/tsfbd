@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<div class="container">
+
+
+{% for news in news_list %}
+<div class="news_list">
+
+      <img src="{{ news.image.url }}" alt="News image" height="150" width="300px">
+        <p class="news_publish_date">{{ news.publish_date }}</p>
+        <a href="{% url 'news_details' news.pk %}">
+          <h4 class="news_title">{{ news.title }}</h4>
+        </a>
+          <p class="news_description">{{ news.news_description | truncatechars:300| safe }}</p>
+          <hr>
+            <h5 class="posted_name"> Posted by : <a href="{{ news.facebook }}">{{ news.posted_name }}</a></h5>
+</div>
+{% endfor %}
+
+<div class="latest_news_list">
+  <h2>latest news</h2>
+  {% for news in lastes_news %}
+  <div>
+    <img src="{{ news.image.url}}" height="100" width="100px" alt="">
+    <h4><a href="">{{ news.title }}</a></h4>
+  </div>
+
+
+
+{% endfor %}
+</div>
+</div>
+
+
+
+<section class="pagination_section">
+<div class="container text-center">
+  {% if news_list.has_previous %}
+
+ <a class="btn btn-outline-primary" href="?page={{ news_list.previous_page_number}}">
+Previous
+ </a>
+   <a class="btn btn-outline-primary" href="?page=1">First</a>
+
+{% endif %}
+  {% for page in news_list.paginator.page_range %}
+  {% if news_list.number == page %}
+<a class=" btn btn-primary" href="?page={{ page }}">{{ page }}</a>
+  {% elif page > news_list.number|add:'-3' and  page > news_list.number|add:'3' %}
+  <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+  {% else %}
+  <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+  {% endif %}
+  {% endfor %}
+  {% if news_list.has_next %}
+
+
+      <a class="btn btn-outline-primary" href="?page={{ news_list.paginator.num_pages }}">
+      Next
+      </a>
+      <a class="btn btn-outline-primary" href="?page={{ news_list.next_page_number}}">Last </a>
+
+    {% endif %}
+</div>
+</section>
+
+{% endblock %}

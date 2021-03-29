@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<section class="branch_name_list_section">
+    <div class="branch_navbar">
+       <div class="container text-center">
+
+        <button type="button" class="btn btn-primary">
+            Total Member <span class="badge badge-light">{{ members.count }}</span>
+          </button>
+          {% if user.is_superuser %}
+          <a href="{% url 'add_member_form' branch_years.slug branch_years.pk %}" class="btn btn-primary add_button">Add Member</a>
+            {% endif %}
+
+     </div>
+    </div>
+
+<div class="container">
+    <h1 class="branch_heading_title">{{ branch_years }} </h1> 
+    {% include 'home/messeage.html' %}
+    <div class="row justify-content-center">
+      
+  {% for member in members %}
+
+      <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="our-team">
+          <div class="member_profile_box">
+            <img   src="{{ member.photo.url }}" class="img-fluid rounded-circle member_profile_pic">
+          </div>
+          <p class="member_name"><a href="{% url 'branch_leader_details' member.slug member.pk %}">{{ member.name }}</a></p>
+          <p class="member_position badge badge-warning">{{ member.position}}</p>
+
+ 
+        </div>
+      </div>
+      {% empty %}
+      <div class="alert alert-danger" role="alert">
+        Not added yet..thank you    
+        </div>
+      {% endfor %}
+
+       
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="loader">
+  <img src="{% static 'img/tsf.jpg' %}" alt="preloading" class="preloading">
+</div>
+<!-- socail icon section -->
+{% include 'home/social.html' %}
+
+<!---- slider section--->
+{% include 'home/slider.html' %}
+<!---- tsf leader section--->
+
+
+<section class="tsf_leader_introduction">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="tsf_president text-center">
+              <a data-toggle="modal" data-target="#presidentDetail">
+              <img src="{{ about_inform.tsf_president_photo.url }}" alt="" class="tsf_leader_profile_img wow slideInLeft">
+              <p class="tsf_leader_name">{{about_inform.tsf_president_name }}</p>
+                <h2 class="tsf_leadr_postion">{{about_inform.tsf_president_title}}</h2>
+              </a>
+<!-- Modal -->
+<div class="modal fade" id="presidentDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{about_inform.tsf_president_name }} about</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body president_details ">
+        <p>
+          <img src="{{ about_inform.tsf_president_photo.url }}" alt="logo" class="img-fluid rounded-circle tsf_leadr_pic">
+       <span class="">
+          {{ about_inform.tsf_president_about }}
+       </span>
+      </p>
+      </div>
+  
+    </div>
+  </div>
+</div>
+            </div>
+
+
+          </div>
+
+
+
+          <div class="col-md-6">
+            <div class="">
+              <div class="text-center">
+            <img src="{{ about_inform.tsf_logo.url }}" alt="" class="home_tsf_logo"/ >
+            </div>
+              <h1 class="tsf_name_title">Tripura Students' Forum, Bangladesh</h1>
+              <p class="tsf_info_about">{{ about_inform.tsf_about }}</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="tsf_president text-center">
+              <a data-toggle="modal" data-target="#secretaryDetail">
+              <img src="{{ about_inform.tsf_secretary_photo.url }}" alt="" class="tsf_leader_profile_img">
+              <p class="tsf_leader_name">{{about_inform.tsf_secretary_name }}</p>
+                <h2 class="tsf_leadr_postion">{{about_inform.tsf_secretary_title}}</h2>
+
+              </a>
+<!-- Modal -->
+<div class="modal fade" id="secretaryDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{ about_inform.tsf_secretary_name }} about</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body president_details">
+        <p>
+          <img src="{{ about_inform.tsf_secretary_photo.url }}" alt="logo" class="img-fluid rounded-circle tsf_leadr_pic">
+       <span class="">
+          {{ about_inform.tsf_secretary_about }}
+       </span>
+      </p>
+      <hr>
+      
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+            </div>
+      
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--- glance seciton---->
+<section class="glance_section">
+  <div class="container">
+    <h2 class="glance_title">At a glance</h2>
+    <div class="row justify-content-center">
+    {% for student in student_categories %}
+    <div class="col-md-3">
+    <div class="student_category_box">
+        <img src="{% static 'img/tsf.jpg' %}" alt="books" class="students_books">
+      <p class="student_count">{{ student.current_enroll.count }}</p>
+
+      <h1 class="student_category_name"><a href="{% url 'studentscategory' student.pk %} ">{{ student.current_enroll_name }}
+       </a></h1>
+    </div>
+
+    </div>
+    {% empty %}
+    <div class="alert alert-danger" role="alert">
+      there is no available student category... wait until added thank you!    
+      </div>
+    {% endfor %}
+
+  </div>
+      </div>
+</section>
+<!----- lastes news section---->
+<section class="latest_news_section">
+<div class="container">
+  <h3 class="latest_news_title">Latest Top 4 Activities</h3>
+  <div class="row justify-content-center">
+    {% for news in lastes_news %}
+    <div class="col-md-5 latest_news card">
+    <div class="card-body">
+   
+        <img src="{{ news.image.url }}" height="120" width="100%" alt="news image">
+        <h2 class="latest_news_heading"><a href="{% url 'news_details' news.slug news.pk %}"> {{ news.title }}</a></h2>
+    
+    </div>
+    </div>
+    {% empty %}
+    <div class="alert alert-danger" role="alert">
+      there is no available latest newws... wait until added thank you!    
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+{% endblock %}

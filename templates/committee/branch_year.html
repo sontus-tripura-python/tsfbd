@@ -1,0 +1,47 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<section class="branch_name_list_section">
+    <div class="branch_navbar">
+       <div class="container text-center">
+
+        <button type="button" class="btn btn-primary">
+            Total Year <span class="badge badge-light">{{ branch_name.branch_names.count }}</span>
+          </button>
+          {% if user.is_superuser %}
+          <a href="{% url 'branch_year_create_form' branch_name.slug branch_name.pk %}" class="btn btn-primary">Add Year</a>
+            {% endif %}
+
+     </div>
+    </div>
+
+<div class="container">
+    <h1 class="branch_heading_title"> {{ branch_name }} year list</h1> 
+    {% include 'home/messeage.html' %}
+   <div class="row justify-content-center">
+       {% for name in branchyears %}
+       <div class="card branch_year_box">
+           <div class="card-body">
+            <div class="text-center">
+                <img src="{% static 'img/calendar.jpg'%}" alt="" class="calendar_logo">
+              </div>
+              <p class="branch_categories_name"><a href="{% url 'branch_member' name.slug name.pk %}">{{ name.branchyear}}</a></p>
+              {% if user.is_superuser %}
+              <a href="{% url 'branch_year_update' name.slug name.pk %}" class="btn btn-danger btn-sm btn-block">Update</a>
+              <a href="{% url 'branch_year_delete' name.slug name.pk %}" class="btn btn-danger btn-sm btn-block"  onclick="return confirm('are you sure want to delete?')">delete</a>
+              {% endif %}
+
+
+           </div>
+       </div>
+       {% empty %}
+       <div class="alert alert-danger" role="alert">
+         Not added yet..thank you    
+         </div>
+       {% endfor %}
+   </div>
+</div>
+</section>
+
+
+{% endblock %}

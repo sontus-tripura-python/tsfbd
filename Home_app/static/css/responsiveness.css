@@ -1,0 +1,407 @@
+
+@media only screen and (max-width: 320px){
+  .logo{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+  .logotext{
+    text-align: center;
+  	font-weight:bold;
+  	font-style:italic;
+  	color:#fff;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 10px;
+      padding-top: 5px;
+  }
+  .latest_news_heading{
+    font-size: 18px;
+  }
+  .countrytext{
+  		color:#51ff58;
+  	font-weight:bold;
+  	font-style:italic;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 16px;
+      padding-top: 15px;
+  }
+  .logo-section{
+    margin-right: 2px;
+    float: left;
+  }
+  .logoheder{
+    height: 100px;
+  }
+  /*-- slider---*/
+  .silde_img{
+    height: 200px;
+  }
+  .slider_caption{
+  text-align: center;
+  top: 80%;
+    left: 10%;
+  position: absolute;
+  transform: translateY(-50%);
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+
+    font-weight: bold;
+  }
+  /*--- centrallear css */
+  .central_year{
+    width: 140px;
+    height: 120px;
+    float: left;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .calendar_logo{
+    height: 40px;
+    width: 40px;
+    box-shadow: 8px 3px 8px #ddd;
+  }
+  /* --- co_ordinator css */
+  .co_ordinator_section{
+    height: 150px;
+    width: 100%;
+    margin: 5px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+  }
+  .leader_name{
+    font-size: 15px;
+  }
+  .profile_name{
+    font-size: 16px;
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .news_latest_section{
+    display: none;
+  }
+  .news_latest_section1{
+    display: block;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .logo{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+  .logotext{
+    text-align: center;
+  	font-weight:bold;
+  	font-style:italic;
+  	color:#fff;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 10px;
+      padding-top: 5px;
+  }
+  .countrytext{
+  		color:#51ff58;
+  	font-weight:bold;
+  	font-style:italic;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 16px;
+      padding-top: 15px;
+  }
+  .logo-section{
+    margin-right: 2px;
+    float: left;
+  }
+  .logoheder{
+    height: 100px;
+  }
+  .central_year{
+    width: 150px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .calendar_logo{
+    height: 40px;
+    width: 40px;
+    box-shadow: 8px 3px 8px #ddd;
+  }
+  /* --- co_ordinator css */
+  .co_ordinator_section{
+    height: 150px;
+    width: 250px;
+    margin: 5px;
+    margin-left: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+  }
+  .branchyears{
+    margin-left: 20px;
+    margin: 5px;
+  }
+  .silde_img{
+    height: 200px;
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .latest_news_heading{
+        font-size: 20px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 420px) {
+  .logo{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+  .logotext{
+    text-align: center;
+  	font-weight:bold;
+  	font-style:italic;
+  	color:#fff;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 10px;
+      padding-top: 5px;
+  }
+  .countrytext{
+  		color:#51ff58;
+  	font-weight:bold;
+  	font-style:italic;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 16px;
+      padding-top: 15px;
+  }
+  .logo-section{
+    margin-right: 2px;
+    float: left;
+  }
+  .logoheder{
+    height: 100px;
+  }
+  .central_year{
+    width: 160px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .calendar_logo{
+    height: 40px;
+    width: 40px;
+    box-shadow: 8px 3px 8px #ddd;
+  }
+  /* --- co_ordinator css */
+  .co_ordinator_section{
+    height: 150px;
+    width: 250px;
+    margin: 5px;
+    margin-left: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+  }
+  .branchyears{
+    margin-left: 20px;
+    margin: 5px;
+  }
+  .silde_img{
+    height: 200px;
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .news_latest_section{
+    display: none;
+  }
+  .news_latest_section1{
+    display: block;
+  }
+}
+@media only screen and (min-width: 421px) and (max-width: 600px) {
+  .logo{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+  .logotext{
+    text-align: center;
+  	font-weight:bold;
+  	font-style:italic;
+  	color:#fff;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 10px;
+      padding-top: 5px;
+  }
+  .countrytext{
+  		color:#51ff58;
+  	font-weight:bold;
+  	font-style:italic;
+  	text-transform:uppercase;
+  	text-shadow:-6px 5px 2px #362e42;
+      font-size: 16px;
+      padding-top: 15px;
+  }
+  .logo-section{
+    margin-right: 2px;
+    float: left;
+  }
+  .logoheder{
+    height: 100px;
+  }
+  /*-- slider---*/
+  .silde_img{
+    height: 200px;
+  }
+  .slider_caption{
+  text-align: center;
+  top: 80%;
+    left: 10%;
+  position: absolute;
+  transform: translateY(-50%);
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+font-size: 18px;
+    font-weight: bold;
+  }
+  /*--- centrallear css */
+  .central_year{
+    width: 140px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .calendar_logo{
+    height: 40px;
+    width: 40px;
+    box-shadow: 8px 3px 8px #ddd;
+  }
+  /* --- co_ordinator css */
+  .co_ordinator_section{
+    height: 150px;
+    width: 220px;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+  }
+  .news_latest_section{
+    display: none;
+  }
+  .news_latest_section1{
+    display: block;
+  }
+
+}
+@media only screen and (min-width: 601px) and (max-width: 768px){
+  .logo{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+  }
+  .logotext{
+    text-align: center;
+    font-weight:bold;
+    font-style:italic;
+    color:#fff;
+    text-transform:uppercase;
+    text-shadow:-6px 5px 2px #362e42;
+      font-size: 10px;
+      padding-top: 5px;
+  }
+  .countrytext{
+      color:#51ff58;
+    font-weight:bold;
+    font-style:italic;
+    text-transform:uppercase;
+    text-shadow:-6px 5px 2px #362e42;
+      font-size: 16px;
+      padding-top: 15px;
+  }
+  .logo-section{
+    margin-right: 2px;
+    float: left;
+  }
+  .logoheder{
+    height: 100px;
+  }
+  /*-- slider---*/
+  .silde_img{
+    height: 300px;
+  }
+  .slider_caption{
+  text-align: center;
+  top: 80%;
+    left: 10%;
+  position: absolute;
+  transform: translateY(-50%);
+  }
+  .slider_title{
+    font-style: italic;
+    color: red;
+
+    font-weight: bold;
+  }
+  /*--- centrallear css */
+  .central_year{
+    width: 140px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .calendar_logo{
+    height: 40px;
+    width: 40px;
+    box-shadow: 8px 3px 8px #ddd;
+  }
+  /* --- co_ordinator css */
+  .co_ordinator_section{
+    height: 150px;
+    width: 240px;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+  }
+  .news_latest_section{
+    display: none;
+  }
+  .news_latest_section1{
+    display: block;
+  }
+
+}

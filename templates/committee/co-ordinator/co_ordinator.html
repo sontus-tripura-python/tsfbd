@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+<section class="branch_name_list_section">
+  <div class="container">
+    <h1 class="tsf_name_title">Tripura student Forum, BANGLADESH <br> Co-ordinator</h1>
+    <div class="text-center">
+      {% if user.is_superuser %}
+      <a href="{% url 'coordinator_create' %}" class="btn btn-outline-info text-center">Add Co-ordinator</a>
+      {% endif %}
+    </div>
+    {% include 'home/messeage.html' %}
+    <div class="row justify-content-center co-ordinator">
+       
+      {% for coordinator in coordinators %}
+  
+  
+  
+        <div class="card co_ordinator_section">
+          <div class="card-body">
+  <div class="co_ordinator_photo_section">
+    <img src="{{ coordinator.photo.url }}" alt="" class="co_ordinator_photo">
+  </div>
+            <h2 class="sessions_year">
+              <a href="{% url 'co_ordinator_details' coordinator.slug coordinator.pk %}" class="co_ordinator_name">{{ coordinator.name}}</a>
+              <p class="co_ordinator_position">{{ coordinator.position}}</p>
+            </h2>
+          </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-danger" role="alert">
+          Not added yet..thank you    
+          </div>
+  {% endfor %}
+  </div>
+    </div>
+</section>
+
+
+{% endblock %}

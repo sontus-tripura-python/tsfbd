@@ -1,0 +1,58 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="membership_section">
+      <!-- <div class="text-center">
+    <img src="{% static 'img/tsf.jpg' %}" alt="" class="tsf_logo"/ >
+    </div>
+      <h1 class="tsf_name_title">Tripura student Forum,BANGLADESH</h1> -->
+      <ul class="list-group list_group">
+        <li class="list-group-item ">
+          <h2 class="total_members">Total Members : {{ profile_count }}</h2>
+   
+             
+          <form action="/student-seach/">
+            {% csrf_token %}
+            <input type="search" class="search_input" placeholder="Search" name="query" id="searchField" aria-label="Search">
+          <button type="submit" class="btn btn-outline-info"> Submit
+          </button>
+          </form>
+            
+        </li>
+      </ul>
+<div class="user-table">
+  <div class="user_list">
+    <ol>
+  {% for user in users %}
+      <div class="user_profile">
+        <li>
+            {% if user.profile.photo %}
+          <a href="{% url 'view_profile' pk=user.pk %}">
+            <img src="{{user.profile.photo.url }}" alt="" class="rounded-circle profilepic">
+                </a>
+                {% endif %}
+      <a href="{% url 'view_profile' pk=user.pk %}" class="name_link">
+      <span class="profile_name">{{ user.first_name}} {{ user.last_name }}</span>
+      </a>
+      </li>
+      </div>
+{% empty %}
+<div class="alert alert-danger" role="alert">
+there is no available student... thank you!    
+</div>
+  {% endfor %}
+  </ol>
+</div>
+</div>
+
+   </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

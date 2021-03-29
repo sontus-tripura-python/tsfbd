@@ -1,0 +1,71 @@
+
+
+
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<section style="min-height: 550px;">
+
+
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="membership_section">
+      <div class="text-center">
+    <img src="{% static 'img/tsf.jpg' %}" alt="" class="tsf_logo"/ >
+    </div>
+      <h1 class="tsf_name_title">Tripura student Forum,BANGLADESH</h1>
+      <ul class="list-group list_group">
+        <li class="list-group-item ">
+             <form action="{% url 'search_list_student' %}" >
+                 {% csrf_token %}
+                <input type="search" placeholder="Search" name="query" id="query">
+                <button type="submit"><i class="fas fa-search"></i></button>
+             </form>
+         
+        </li>
+      </ul>
+      {% if allquery|length < 1 %}
+      <p>No search results</p>
+       Your search query : <b>{{query}}</b> did not match any documents. <br>
+       Suggestions:
+       <ul>
+       <li>Make sure that all words are spelled correctly.</li>
+       <li>Try more general keywords.</li>
+      <li> Try fewer keywords.</li>
+      <li> Try different keywords.</li>
+       </li>
+       </ul>
+   
+   
+       {% endif %}
+  <div class="user_list">
+      <ol>
+    {% for student in allquery %}
+<div class="user_profile">
+  <li>
+      {% if student.user.profile.photo %}
+    <a href="{% url 'view_profile' student.pk %}">
+      <img src="{{student.user.profile.photo.url }}" alt="" class="rounded-circle profilepic">
+          </a>
+          {% endif %}
+<a href="{% url 'view_profile' student.pk %}" class="name_link">
+<span class="profile_name">{{ student.user.first_name}} {{ student.user.last_name }}</span>
+</a>
+</li>
+</div>
+
+    {% endfor %}
+    </ol>
+  </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+<section class="branch_name_list_section">
+
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 card year_form">
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+      {{ form|crispy  }}
+      <button type="submit" class="btn btn-success btn-block">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+.slider-container {
+    position: relative;
+    margin: 0 auto; /* Center it */
+    height: 420px;
+  }
+  .silde_img{
+    height: 420px;
+    width: 100%;
+   
+  }
+  .slider-container .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+  }
+.slider-owl-carousels{
+  width: 100%;
+}
+
+  .tsf_leadr_pic{
+    height: 80px;
+    width: 80px;
+    border: 1px solid #000;
+  }
+  .president_details{
+   text-align: justify;
+   background-color: #000;
+   color: #f1f1f1;
+  }

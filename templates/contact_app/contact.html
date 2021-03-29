@@ -1,0 +1,81 @@
+
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+<div class="container">
+  {% include 'home/messeage.html' %}
+</div>
+<div class="Contact_container">
+  <div class="form">
+
+    <div class="contact-info">
+      <h3 class="title">Let's get in touch</h3>
+      <p class="text">
+      We are always ready to know or reply your query . To ask any Question fill up The form
+      </p>
+
+      <div class="info">
+        <div class="information">
+        <i class="fas fa-map-marked-alt icons_size"></i>
+          <p class="address_contact">{{ about_inform.tsf_address }}</p>
+        </div>
+        <div class="information">
+          <i class="fas fa-envelope icons_size"></i>
+          <p class="address_contact">{{ about_inform.tsf_email }}</p>
+        </div>
+        <div class="information">
+        <i class="fas fa-phone-volume icons_size"></i>
+          <p class="address_contact">{{ about_inform.tsf_phone}}</p>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <p>Connect with us :</p>
+        <br>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+
+
+      <form class="form_box"  method="POST"   autocomplete="off">
+        {% csrf_token %}
+        <h3 class="title">Contact with me</h3>
+        <div class="input-container">
+          <input type="text" name="name" class="input-box" />
+          <label for="">Your Name</label>
+          <span>Username</span>
+        </div>
+        <div class="input-container">
+          <input type="email" name="email" class="input-box" />
+          <label for="">Email</label>
+          <span>Email</span>
+        </div>
+        <div class="input-container">
+          <input type="tel" name="phone" class="input-box" />
+          <label for="">Phone</label>
+          <span>Phone</span>
+        </div>
+        <div class="input-container textarea">
+          <textarea name="message" class="input-box"></textarea>
+          <label for="">Message</label>
+          <span>Message</span>
+        </div>
+        <button type="submit" class="btn btn-primay btn-block btn_submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

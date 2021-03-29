@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="membership_section">
+      <div class="text-center">
+    <img src="{% static 'img/tsf.jpg' %}" alt="" class="tsf_logo"/ >
+    </div>
+      <h1 class="tsf_name_title">Tripura student Forum,BANGLADESH</h1>
+
+      <div class="user_list">
+        <h2 class="search_output">Search results:</h2>
+        <div class="search_results"></div>
+        {% if allquery|length < 1 %}
+        <p class="search_error">Result no found or character not match, try again please !</p>
+        <h3>Suggestion</h3>
+        <ul class="suggestion_error">
+          <li>Make sure that all words are spelled correctly.</li>
+          <li>Try different keywords.</li>
+          <li>Try more general keywords.</li>
+        </ul>
+        {% endif %}
+          <ol>
+        {% for object in allquery %}
+    <div class="user_profile">
+      <li>
+
+        <a href="{% url 'view_profile' pk=object.pk %}">
+          <img src="{{ object.photo.url }}" alt="" class="rounded-circle profilepic">
+              </a>
+
+    <a href="{% url 'view_profile' pk=object.pk %}" class="name_link">
+    <span class="profile_name">{{ object.user.first_name}} {{ object.user.last_name }}</span>
+    </a>
+    </li>
+    </div>
+        {% endfor %}
+
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+ <div class="news_section">
+
+    <div class="container">
+        <h1 class="tsf_name_title">Tripura students' Forum, Bangladesh <br>Activities</h1>
+        
+
+      {% if user.is_superuser %}
+      <div class="news_updatesection">
+        <a href="{% url 'news_create' %}" class="btn btn-primary">New News</a>
+          <a href="{% url 'news_draft' %}" class="btn btn-danger">Draft News</a>
+      </div>
+      {% endif %}
+
+      <div class="row justify-content-center">
+        
+            {% for news in news_list %}
+            <div class="col-md-6 col-sm-12">
+                <div class="card news_list">
+
+            <div class="card-body">
+
+                <img src="{{ news.image.url }}" alt="News image" class="news_image">
+                <p class="news_publish_date">Date: {{ news.publish_date }}</p>
+                <a href="{% url 'news_details' news.slug news.pk %}">
+                <h4 class="news_title">{{ news.title }}</h4>
+                </a>
+                <p class="news_description">{{ news.news_description | truncatechars:100| safe }}
+                    <a href="{% url 'news_details' news.slug news.pk %}">continue reading</a>
+                </p>
+                <hr>
+                    <h5 class="posted_name"> Posted by : <a href="{{ news.facebook }}">{{ news.posted_name }}</a></h5>
+
+            </div>
+            </div>
+    </div>
+        {% endfor %}
+    
+        </div>
+       
+    
+    </div>
+     
+ </div>
+ 
+     <section class="pagination_section">
+        <div class="container text-center">
+          {% if news_list.has_previous %}
+        
+         <a class="btn btn-outline-primary" href="?page={{ news_list.previous_page_number}}">
+        Previous
+         </a>
+           <a class="btn btn-outline-primary" href="?page=1">First</a>
+        
+        {% endif %}
+          {% for page in news_list.paginator.page_range %}
+          {% if news_list.number == page %}
+        <a class=" btn btn-primary" href="?page={{ page }}">{{ page }}</a>
+          {% elif page > news_list.number|add:'-3' and  page > news_list.number|add:'3' %}
+          <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+          {% else %}
+          <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
+          {% endif %}
+          {% endfor %}
+          {% if news_list.has_next %}
+        
+        
+              <a class="btn btn-outline-primary" href="?page={{ news_list.paginator.num_pages }}">
+              Next
+              </a>
+              <a class="btn btn-outline-primary" href="?page={{ news_list.next_page_number}}">Last </a>
+        
+            {% endif %}
+        </div>
+        </section>
+ </div>
+{% endblock %}

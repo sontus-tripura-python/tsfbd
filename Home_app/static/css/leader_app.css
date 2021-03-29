@@ -1,0 +1,312 @@
+
+.branch_heading_title{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: blue;
+  font-weight: bold;
+}
+.branch_heading_title:after{
+  content: '';
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #000;
+  margin: 5px auto;
+  border-radius: 10px;
+ 
+}
+.branch_navbar{
+  min-height: 50px;
+  background-color: rgba(124, 106, 106, 0.171);
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+.branch_categories_name{
+  font-size: 18px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.branc_section{
+  overflow: hidden;
+  min-width: 250px;
+  min-height: 150px;
+  border-radius: 5px;
+  float: left;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+margin-right: 5px;
+margin-bottom: 5px;
+}
+.branc_section:hover{
+  background-color: #ddd;
+  color: #fff!important;
+  transition: ease-in-out;
+}
+.branch_category_heading_title{
+  font-size: 12px;
+  font-weight: bold;
+  color: blue;
+}
+.branch_year_box{
+  width: 200px;
+  min-height: 150px;
+  float: left;
+  margin-right: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.branch_year_box:hover{
+  transition: ease-in-out;
+}
+
+
+.our-team {
+  padding: 30px 0 40px;
+  margin-top: 5px;
+   margin-bottom: 30px;
+   background-color: #155E6A;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.our-team:hover{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.member_profile_box{
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+.member_name{
+  font-size: 20px;
+  padding-top: 15px;
+  margin: 0;
+  text-transform: capitalize;
+
+}
+.member_position{
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 0;
+  font-weight: bold;
+  margin: 0;
+}
+.member_profile_pic{
+  border: 1px solid #55ACEE;
+}
+
+.leader-deatils-box{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  min-height: 550px;
+}
+.leaders_name{
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: bold;
+}
+.leader_details_profile_pic{
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+.details_title{
+  font-size: 16px;
+}
+.list_group_box{
+  margin: 5px;
+}
+.leader_badge_heading{
+  font-size: 18px;
+  font-weight: bold;
+}
+.leader_badge_details{
+  font-size: 16px;
+}
+
+
+.central_year_section{
+  min-height: 600px;
+}
+
+
+.central_year{
+  min-width: 200px;
+  min-height: 150px;
+  float: left;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  margin-bottom: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  /* box-shadow: 5px 5px 10px rgba(0, 0,0,0.1), -5px -5px 10px #fff; */
+  transition: all 0.5s;
+}
+.central_year:hover{
+  transform: scale(1.05);
+}
+.sessions_year{
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.calendar_logo{
+  height: 60px;
+  width: 60px;
+  box-shadow: 8px 3px 8px #ddd;
+}
+
+.central_link:hover{
+text-decoration: none;
+}
+.year_form{
+  margin-top: 50px;
+}
+.branch_name{
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+.leader_pro_file{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+/*---- brnahc section css---*/
+.branch_name_form_section{
+  min-height: 500px;
+}
+.branch_name_list_section{
+  min-height: 600px;
+}
+.branch_year_list_section{
+  min-height: 600px;
+}
+.branch_member_list_section{
+  min-height: 600px;
+}
+
+.branch_tsf_logo{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.branch_sectiomn_name{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+.branch_name_link:hover{
+  text-decoration: none;
+}
+.branch_year_link:hover{
+  text-decoration: none;
+}
+/*--- co_ordinator----*/
+.co-ordinator{
+  margin-top: 60px;
+}
+.co_ordinator_position{
+  font-size: 16px;
+  font-weight: bold;
+}
+.co_ordinator_name{
+  text-transform: capitalize;
+  font-size: 18px;
+  color: #fff!important;
+}
+.co_ordinator_photo{
+  height: 80px;
+  width: 80px;
+    border: 2px solid #2f8ea4;
+  border-radius: 50%;
+  background: #fff;
+}
+.co_ordinator_section{
+  height: 150px;
+  width: 250px;
+  margin-right: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #2f8ea4;
+
+}
+
+.co_ordinator_photo_section{
+  text-align: center;
+  margin-top: -50px;
+
+
+}
+.co_ordinator_leader_profile{
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+}
+.co_ordinator_short_descriptions{
+  font-style: italic;
+}
+/* ----- central leader section---- */
+
+
+.social_link{
+  font-size: 16px;
+}
+.instagramcolor{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 11px;
+  font-size: 15px;
+  background:#E4405F;
+  color: white;
+}
+.link-IN {
+  background: #007bb5;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 12px;
+  font-size: 25px;
+}
+.twittercolor {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 12px;
+  font-size: 25px;
+  background: #55ACEE;
+  color: white;
+}
+.fbcolor {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 14px;
+  font-size: 25px;
+  background: #3B5998;
+
+  color: white;
+}
+/*-- profile update ---*/
+.navbar_section{
+  margin-bottom: 5px;
+}
+.profilenavbar{
+  background: #2f8ea4;
+}

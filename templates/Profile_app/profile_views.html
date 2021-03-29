@@ -1,0 +1,140 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block body %}
+
+<section class="login_page_section">
+
+
+<div class="container">
+  <div class="row justify-content-center">
+<div class="col-md-8">
+  <div class="card central_leeader_detail_section">
+    <div class="card-body">
+
+<div class="text-center">
+  {% if user.profile.photo %}
+     <img src="{{ user.profile.photo.url }}" alt="" class="rounded-circle profile-detail-pic">
+    
+{% endif %}
+<h3 class="name">{{ user.first_name }} <span class="lastname">{{ user.last_name }}</h3>
+</div>
+
+<ul class="list-group list_group">
+  <li class="list-group-item">
+    <h2 class="title_name">Father Name : <span class="name_of_profile">{{ user.profile.fathername }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item">
+    <h2 class="title_name">Mother Name : <span class="name_of_profile">{{ user.profile.mothername }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item">
+    <h2 class="title_name">School : <span class="name_of_profile">{{ user.profile.School }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item">
+    <h2 class="title_name">College : <span class="name_of_profile">{{ user.profile.college }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">University : <span class="name_of_profile">{{ user.profile.university }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item">
+    <h2 class="title_name">Department : <span class="name_of_profile">{{ user.profile.deparment }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="current_enroll">Current Enroll : <span class="current_enroll">{{ user.profile.current_enroll }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Class Name : <span class="name_of_profile">{{ user.profile.Class }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Birthday : <span class="name_of_profile">{{ user.profile.birthday }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Gender : <span class="name_of_profile">{{ user.profile.gender }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Status : <span class="name_of_profile">{{ user.profile.status }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Religion : <span class="name_of_profile">{{ user.profile.religion }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">District : <span class="name_of_profile">{{ user.profile.district }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Thana : <span class="name_of_profile">{{ user.profile.thana }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Village : <span class="name_of_profile">{{ user.profile.Village }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Local City : <span class="name_of_profile">{{ user.profile.local_city }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+    <h2 class="title_name">Current City : <span class="name_of_profile">{{ user.profile.current_city }}</span></h2>
+
+  </li>
+</ul>
+<ul class="list-group list_group">
+  <li class="list-group-item ">
+<h2 class="social_link"> Follow :
+  <a href="{{ user.profile.facebook}}"><i class="fab fa-facebook-f fbcolor"></i></a>
+  <a href="{{ user.profile.twitter}}"><i class="fab fa-twitter twittercolor"></i></a>
+  <a href="{{ user.profile.instagram}}"><i class="fab fa-instagram instagramcolor"></i></a>
+   <a href="{{ user.profile.linkdin}}"><i class="fab fa-linkedin-in link-IN "></i></a>
+</h2>
+
+  </li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+</section>
+{% endblock %}

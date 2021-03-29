@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+       
+   <div class="side_left">
+    <ul class="footer_list">
+      <h2 class="Tsf_info">TSF.BD info</h2>
+       <li> Email : {{ about_inform.tsf_email }}</li>
+       <li> Phone:{{ about_inform.tsf_phone }}</li>
+       <li> Address: {{ about_inform.tsf_address }}</li>
+       <li> <a href="{% url 'contact' %}">To Messeage Here</a></li>
+     </ul>
+   </div>
+       </div>
+       <div class="col-md-6">
+<div class="footer_list">
+  <h2 class="developer_title">Developer Info</h2>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+Touch Here
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title" id="exampleModalLongTitle">Developer Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body developer_address">
+        
+      <p>Name:{{ developer_info.developer_name}}</p>
+      <p>Co-assistance:{{ developer_info.co_assistance_name }}</p>
+      <p>Email: {{ developer_info.developer_email}}</p>
+      <p>Address:{{ developer_info.developer_address }}</p>
+      <p >Website: <a href="">{{ developer_info.developer_website}}</a></p>
+      <a href=""><i class="fab fa-facebook-f fb icons"></i></a>
+      <a href=" "><i class="fab fa-twitter twitter icons"></i></a>
+      <a href ="" ><i class="fab fa-youtube Youtube icons"></i></a>
+      <a href="" ><i class="fab fa-instagram instgrm icons"></i></a>
+      </div>
+    
+    </div>
+  </div>
+</div>
+            </div>
+    </div>
+</div>

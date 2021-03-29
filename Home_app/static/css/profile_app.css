@@ -1,0 +1,208 @@
+.login_form{
+  padding: 10px 20px;
+  background: #1fd2a8;
+}
+.label_title{
+
+  font-size: 16px;
+  font-weight: bold;
+}
+.require{
+  color: red;
+  font-size: 12px;
+}
+.input_section{
+  margin-bottom: 5px;
+}
+.input-group-prepend{
+  width: 100%;
+}
+
+
+/* ----profile */
+
+.membership_section{
+  background: #fff;
+  min-height: 700px;
+  width: 100%;
+  box-shadow:1px 4px 5px 2px #333d42
+}
+.profilepic{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.total_members{
+  font-size: 20px;
+  font-weight: bold;
+}
+.profile_name{
+  font-size: 22px;
+  text-transform: capitalize;
+
+}
+.name_link:hover{
+    text-decoration: none;
+}
+.user_list{
+  margin-left: 20px;
+}
+.user_profile{
+  margin-bottom: 5px;
+}
+.image-profiles{
+  text-align: center;
+}
+.profile-detail-pic{
+  width: 200px;
+  height: 200px;
+}
+.name{
+
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.name_of_profile{
+  font-weight: bold;
+ 
+  font-size: 18px;
+}
+.title_name{
+  font-weight: bold;
+  font-size: 18px;
+}
+.current_enroll{
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+.social_link{
+  font-style: italic;
+}
+.instagramcolor{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 11px;
+  font-size: 30px;
+  background:#E4405F;
+  color: white;
+}
+.link-IN {
+  background: #007bb5;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 12px;
+  font-size: 30px;
+}
+.twittercolor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 12px;
+  font-size: 30px;
+  background: #55ACEE;
+  color: white;
+}
+.fbcolor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+  padding: 14px;
+  font-size: 30px;
+  background: #3B5998;
+
+  color: white;
+}
+.search_input{
+  margin-top: 5px;
+  height: 40px;
+}
+.search_btn{
+  border-radius: 50%;
+}
+.search_icon{
+  font-size: 40px;
+
+
+}
+.search_results{
+  height: 2px;
+  width: 200px;
+  background: green;
+  margin-bottom: 5px;
+}
+.search_output{
+  margin: 0;
+}
+.search_error{
+  color: red;
+}
+/*-- profile update ---*/
+.navbar_section{
+  margin-bottom: 5px;
+}
+.profilenavbar{
+  background: #2f8ea4;
+}
+/* === login css==== */
+.login_page_section{
+  min-height: 550px;
+  background-color: darkcyan;
+}
+.user_card {
+  width: 650px;
+  margin-top: 100px;
+  margin-bottom: auto;
+  background: #74cfbf;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  min-height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+.form_container {
+  margin-top: 20px;
+}
+
+#form-title{
+  color: #fff;
+  
+}
+
+.login_btn {
+  width: 100%;
+  background: #33ccff !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #f7ba5b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}

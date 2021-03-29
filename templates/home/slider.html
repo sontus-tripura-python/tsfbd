@@ -1,0 +1,14 @@
+{% load static %}
+<div class="container">
+  <div class="slider-container slider-owl-carousels owl-carousel">
+    {% for slider in sliders %}
+    <div class=" col-xs-3 mr-3 home_slider_box">
+      <img src="{{ slider.silder_image.url }}" class="silde_img" alt="First slide">
+      <div class="content">
+        <p>{{ slider.title }}</p>
+      </div>
+    </div>
+  {% endfor %}
+  </div> 
+</div>
+

@@ -1,0 +1,105 @@
+.vedio_section{
+    min-height: 600px;
+}
+.vedio_list{
+    margin: 10px;
+}
+.poster_section{
+    text-align: center;
+  
+  }
+  .poster_logo{
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #000;
+  }
+  .playper_logo{
+    height: 60px;
+    width: 60px;
+    margin-top: -200px;
+    border-radius: 50%;
+    opacity: .5;
+  }
+  .player_section{
+    text-align: center;
+  
+  }
+  .vedio_title{
+      font-size: 20px;
+   margin-top: -20px;
+      padding: 0;
+      font-style: italic;
+      text-align: center;
+  }
+  video {
+    width: 100%;
+    height: auto;
+  }
+  .vedio_details_secton{
+    min-height: 550px;
+  }
+ .similiar_vedio_box{
+   float: left;
+   margin: 2px;
+   width: 200px;
+   border-radius: 5px;
+ }
+ .vedio_comment_box{
+   width: 300px;
+ }
+  .comments{
+  color: green;
+  }
+  .similiar_vedio_poster{
+    height: 100px;
+  }
+  .similiar_vedio_heading{
+    font-style: italic;
+    font-weight: bold;
+    
+  }
+/* === respomsive==== */
+  @media screen and (max-width: 320px){
+  .poster_logo{
+    width: 180px;
+    height: 100px;
+  }
+  .playper_logo{
+    margin-top: -125px;
+
+  }
+  .vedio_title{
+    font-size: 18px;
+}
+ .vedio_comment_box{
+  width: 200px;
+}
+.similiar_vedio_box{
+  display: block;
+  justify-content: center;
+  margin: 2px;
+}
+  }
+  @media only screen and (min-width: 321px) and (max-width: 460px) {
+    .poster_logo{
+      width: 200px;
+      height: 100px;
+
+    }
+    .playper_logo{
+      margin-top: -130px;
+  
+    }
+    .vedio_title{
+      font-size: 18px;
+  }
+  .vedio_comment_box{
+    width: 200px;
+  }
+  .similiar_vedio_box{
+    display: block;
+    justify-content: center;
+    margin: 2px;
+  }
+  }
