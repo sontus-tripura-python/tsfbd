@@ -64,7 +64,6 @@ def emailValidation(request):
 
                    
 def register(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if request.user.is_authenticated:
         return redirect('profile')
     else:
@@ -89,11 +88,10 @@ def register(request):
                 messages.success(request, 'your account has been successfully created')
                 return redirect('login')
     
-        return render(request, 'Profile_app/register.html', context={'about_inform': about_inform})
+        return render(request, 'Profile_app/register.html',)
 
 
 def loginPage(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if request.user.is_authenticated:
         return redirect('profile')
     else:
@@ -107,7 +105,7 @@ def loginPage(request):
             else:
                 messages.info(request, 'Username Or Passsword is incorrect')
 
-    context = {'about_inform': about_inform}
+    
     return render(request, 'Profile_app/login.html', context)
 
 @login_required
@@ -115,29 +113,25 @@ def logout(request):
     return redirect('/')
 
 def profile(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
-    return render(request, 'Profile_app/profile.html', context={'about_inform': about_inform })
+    return render(request, 'Profile_app/profile.html')
 
 def membership(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     users = User.objects.all()
     profile = Profile.objects.all()
     profile_count = profile.count()
-    context = { 'users': users, 'profile_count': profile_count, 'about_inform': about_inform }
+    context = { 'users': users, 'profile_count': profile_count, }
 
     return render(request, 'Profile_app/membership.html', context)
 
 def view_profile(request, pk=None):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if pk:
         user = User.objects.get(pk=pk)
     else:
         user = request.user
-    arg = {'user': user, 'about_inform': about_inform }
+    arg = {'user': user,}
     return render(request, 'Profile_app/profile_views.html', arg)
 
 def search_list(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     query = request.GET['query']
     allquery = Profile.objects.filter(
                 Q(user__first_name__icontains=query)|
@@ -157,7 +151,6 @@ def search_list(request):
 
 @login_required
 def edit_profile(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if request.method == 'POST':
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if p_form.is_valid():
@@ -165,12 +158,11 @@ def edit_profile(request):
             return redirect('profile')
     else:
         p_form = ProfileUpdateForm(instance=request.user.profile)
-    context = {'p_form': p_form, 'about_inform': about_inform }
+    context = {'p_form': p_form,}
     return render (request, 'Profile_app/Profile_edit.html', context )
 
 @login_required
 def accoount_update(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         if u_form.is_valid():
@@ -178,7 +170,7 @@ def accoount_update(request):
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
-    context = {'u_form': u_form, 'about_inform': about_inform }
+    context = {'u_form': u_form }
     return render (request, 'Profile_app/account_edit.html', context )
 
 

@@ -1,9 +1,12 @@
 
-
-
 {% extends 'home/base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd - {{students}}
+{% endblock%}
+</title>
 {% block body %}
 <div class="container">
 <div class="row justify-content-center">
@@ -12,12 +15,6 @@
       <ul class="list-group list_group">
         <li class="list-group-item ">
           <h2 class="total_members">Total {{students}} - students : {{ students_category_count }}</h2>
-      
-              <!-- <form action="/student-seach/">
-                {% csrf_token %}
-                <input type="search" placeholder="Search" name="query" id="searchField" aria-label="Search">
-              <button type="submit"><i class="fas fa-search"></i></button>
-              </form> -->
          
         </li>
       </ul>
