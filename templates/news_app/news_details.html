@@ -1,6 +1,14 @@
 {% extends 'home/base.html' %}
-{% block body %}
 {% load crispy_forms_tags %}
+<title>
+  {% block title %}
+Tsfbd - {{ news.title }}
+{% endblock%}
+</title>
+
+{% block body %}
+
+
 
 <div class="container">
   <div class="row justify-content-center">
