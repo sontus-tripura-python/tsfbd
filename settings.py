@@ -69,13 +69,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CKEDITOR_UPLOAD_PATH = "uploads/"
-ROOT_URLCONF = 'tsfsite.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join('templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -92,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tsfsite.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'tsfsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':'db.sqlite3',
     }
 }
 
@@ -154,12 +154,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join('staticfiles')
 STATIC_URL = '/static/'
 STACTICFILES_DIRS = [
- os.path.join(BASE_DIR, 'static'),
+ os.path.join('static'),
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join('media')
 MEDIA_URL = '/media/'
 STACTICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
