@@ -29,40 +29,6 @@ def emailValidation(request):
         return JsonResponse({'email_error': 'Sorry, email address is already used, try another one'}, status=400)
     return JsonResponse("email validatioon", safe=False)
 
-
-
-# def register(request):
-#     about_inform = TsfAboutSetting.objects.get(id=1)
-#     if request.user.is_authenticated:
-#         return redirect('profile')
-#     else:
-#         if request.method == 'POST':
-#             username = request.POST['username']
-#             fname = request.POST['fname']
-#             lname = request.POST['lname']
-#             email = request.POST['email']
-#             password = request.POST['password']
-#             context = {'fieldValue': request.POST}
-#             if not User.objects.filter(username=username).exists():
-#                 if not User.objects.filter(email=email).exists():
-#                     if len(password)<8:
-#                         messages.error(request, 'password too short,it have to be minimun 8 characters')
-#                         return render(request, 'account/register.html', context)
-#                     if len(username)<5:
-#                         messages.error(request, 'your username less than 5 characters, try again')
-#                         return render(request, 'account/register.html', context)
-#                     user = User.objects.create_user(username=username, email=email)
-#                     user.first_name = fname
-#                     user.last_name = lname
-#                     user.set_password(password)
-#                     user.save()
-#                     messages.success(request, 'your account has been successfully created')
-#                     return redirect('login')
-        
-#         return render(request, 'Profile_app/register.html', context={'about_inform': about_inform})
-
-
-                   
 def register(request):
     if request.user.is_authenticated:
         return redirect('profile')
@@ -106,7 +72,7 @@ def loginPage(request):
                 messages.info(request, 'Username Or Passsword is incorrect')
 
     
-    return render(request, 'Profile_app/login.html', context)
+    return render(request, 'Profile_app/login.html')
 
 @login_required
 def logout(request):

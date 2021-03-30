@@ -1,15 +1,16 @@
 {% extends 'home/base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd - all student
+{% endblock%}
+</title>
 {% block body %}
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-md-8">
     <div class="membership_section">
-      <!-- <div class="text-center">
-    <img src="{% static 'img/tsf.jpg' %}" alt="" class="tsf_logo"/ >
-    </div>
-      <h1 class="tsf_name_title">Tripura student Forum,BANGLADESH</h1> -->
       <ul class="list-group list_group">
         <li class="list-group-item ">
           <h2 class="total_members">Total Members : {{ profile_count }}</h2>
