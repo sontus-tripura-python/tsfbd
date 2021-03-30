@@ -1,5 +1,10 @@
 {% extends 'home/base.html' %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd -{{ branch_categories.name }} name list
+{% endblock%}
+</title>
 {% block body %}
 <section class="branch_name_list_section">
     <div class="branch_navbar">

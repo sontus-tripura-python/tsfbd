@@ -9,7 +9,6 @@ from django.urls import reverse
 from django.contrib import messages
 import uuid
 # Create your views here.
-
 def news(request):
     news_list = News.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')
     lastes_news = News.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')[:5]
@@ -89,3 +88,4 @@ def news_delete(request, slug, pk):
     news = get_object_or_404(News, slug=slug, pk=pk)
     news.delete()
     return redirect('news')
+

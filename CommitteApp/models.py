@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from PIL import Image
 # Create your models here.
 class CentralYear(models.Model):
     yearname = models.CharField(max_length=30)
@@ -40,6 +41,16 @@ class CentralMember(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self):
+        super().save()
+
+        img = Image.open(self.photo.path)
+
+        if img.height > 200 or img.width > 200:
+            output_size =(200, 200)
+            img.thumbnail(output_size)
+            img.save(self.photo.path)
 
     class Meta:
         verbose_name_plural = 'Central Member'
@@ -106,6 +117,16 @@ class BranchMember(models.Model):
     def __str__(self):
         return f"{self.name } of {self.branch_year}"
 
+    def save(self):
+        super().save()
+
+        img = Image.open(self.photo.path)
+        
+        if img.height > 200 or img.width > 200:
+            output_size =(200, 200)
+            img.thumbnail(output_size)
+            img.save(self.photo.path)
+
 
 class Coordinator(models.Model):
     photo = models.ImageField(default='default.jpg', upload_to='branchmember', blank=True)
@@ -120,6 +141,16 @@ class Coordinator(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def save(self):
+        super().save()
+
+        img = Image.open(self.photo.path)
+        
+        if img.height > 200 or img.width > 200:
+            output_size =(200, 200)
+            img.thumbnail(output_size)
+            img.save(self.photo.path)
 
     class Meta:
         verbose_name_plural = "Co-ordinator"

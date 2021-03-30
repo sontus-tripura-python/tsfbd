@@ -286,7 +286,7 @@ def coordinator_update(request, slug, pk):
         if form.is_valid():
             form.save()
             messages.info(request, 'co-ordinator has been updated successfully')
-            return redirect('co_ordinator')
+            return redirect('co_ordinator_list')
     else:
         form = CoordinatorForm(instance=co_ordinator)
         context = {'form': form,}
@@ -296,4 +296,4 @@ def coordinator_update(request, slug, pk):
 def co_ordinator_delete(request, slug, pk):
     co_ordinator = get_object_or_404(Coordinator, slug=slug, pk=pk)
     co_ordinator.delete()
-    return redirect('co_ordinator')
+    return redirect('co_ordinator_list')

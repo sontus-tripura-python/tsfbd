@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'About_app.apps.AboutAppConfig',
     'Photo_app',
     'CommitteApp',
+    'Notice',
      #third party app
      'ckeditor',
     'ckeditor_uploader',

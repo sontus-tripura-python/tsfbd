@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from PIL import Image
 # Create your models here.
 class StudentCategory(models.Model):
     current_enroll_name = models.CharField(max_length=100,  null=True, blank=True)
@@ -35,8 +36,19 @@ class Profile(models.Model):
     twitter = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     linkdin = models.URLField(blank=True)
+
     def __str__(self):
         return self.user.username
+
+    def save(self):
+        super().save()
+
+        img = Image.open(self.photo.path)
+        
+        if img.height > 300 or img.width > 300:
+            output_size =(300, 300)
+            img.thumbnail(output_size)
+            img.save(self.photo.path)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):

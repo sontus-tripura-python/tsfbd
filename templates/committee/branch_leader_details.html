@@ -1,5 +1,11 @@
 {% extends 'home/base.html' %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd -{{Branchdetail.name }}
+{% endblock%}
+</title>
+
 {% block body %}
 
 
@@ -14,8 +20,8 @@
   {% endif %}
 <div class="text-center">
   <img src="{{Branchdetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
-  <h2 class="leader_name">{{Branchdetail.name }}</h2>
-  <h2 class="posting"> {{Branchdetail.position }}</h2>
+  <h2 class="leader_deatails_name">{{Branchdetail.name }}</h2>
+  <h2 class="details_leader_postion_name"> {{Branchdetail.position }}</h2>
 </div>
 <ul class="list-group list_group_box">
   <li class="list-group-item ">

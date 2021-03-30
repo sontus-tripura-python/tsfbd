@@ -1,5 +1,5 @@
 from django.db import models
-
+from PIL import Image
 # Create your models here.
 class TsfAboutSetting(models.Model):
     tsf_logo = models.ImageField(upload_to='tsf_logo', blank=True)
@@ -26,6 +26,16 @@ class TsfAboutSetting(models.Model):
 
     def __str__(self):
         return f"{self.tsf_greeting} of tsf"
+    
+    def save(self):
+        super().save()
+
+        img = Image.open(self.tsf_president_photo.path)
+        
+        if img.height > 300 or img.width > 300:
+            output_size =(300, 300)
+            img.thumbnail(output_size)
+            img.save(self.tsf_president_photo.path)
 
     class Meta:
         verbose_name_plural = "TSF ABOUT"
@@ -59,3 +69,13 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self):
+        super().save()
+
+        img = Image.open(self.silder_image.path)
+        
+        if img.height > 420 or img.width > 500:
+            output_size =(420, 500)
+            img.thumbnail(output_size)
+            img.save(self.silder_image.path)

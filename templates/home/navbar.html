@@ -63,11 +63,19 @@
               <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/admin">Admin</a>
+               {% if request.user.is_authenticated %}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                 {% else %}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'register' %}">Sign Up</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                
+               
+                 
 
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/admin">Login</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/admin">Sign Up</a>
+                {% endif %}
             </div>
           </li>
         </ul>

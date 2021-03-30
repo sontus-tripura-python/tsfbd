@@ -180,6 +180,15 @@ text-decoration: none;
   width: 60px;
   border-radius: 50%;
 }
+.details_leader_postion_name{
+  font-size: 18px;
+}
+.leader_deatails_name{
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
 
 /*---- brnahc section css---*/
 .branch_name_form_section{
@@ -215,6 +224,7 @@ text-decoration: none;
 /*--- co_ordinator----*/
 .co-ordinator{
   margin-top: 60px;
+
 }
 .co_ordinator_position{
   font-size: 16px;

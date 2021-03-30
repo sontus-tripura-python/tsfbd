@@ -1,5 +1,10 @@
 {% extends 'home/base.html' %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd - {{Coordinatordetail.name }}
+{% endblock%}
+</title>
 {% block body %}
 
 <section style="min-height: 550px;">
@@ -14,18 +19,18 @@
  {% endif %}
 <div class="text-center">
   <img src="{{Coordinatordetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
-  <h2 class="leader_name">{{Coordinatordetail.name }}</h2>
-  <h2 class="posting"> {{Coordinatordetail.position }}</h2>
+  <h2 class="leader_deatails_name">{{Coordinatordetail.name }}</h2>
+  <h2 class="details_leader_postion_name"> {{Coordinatordetail.position }}</h2>
 </div>
 
-<ul class="list-group list_group">
+<ul class="list-group list_group_box">
   <li class="list-group-item ">
-    <h2 class="title_name">About : <span class="name_of_profile">{{Coordinatordetail.about_description }}</span></h2>
+    <h2 class="title_name">About : <span class="details_title">{{Coordinatordetail.about_description }}</span></h2>
 
   </li>
 </ul>
 
-<ul class="list-group list_group">
+<ul class="list-group list_group_box">
   <li class="list-group-item ">
     <h2 class="social_link"> Follow :
       <a href="{{Coordinatordetail.facebook}}"><i class="fab fa-facebook-f fbcolor"></i></a>

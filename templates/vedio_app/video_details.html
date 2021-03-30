@@ -42,6 +42,10 @@
                </div>
 
                <div class="vedio_comment_box">
+                <button type="button" class="btn btn-primary">
+                  Total comments <span class="badge badge-light">{{ video.vedio_comment.count }}</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
                 <form method="POST">
                   {% csrf_token %}
                 {{ form|crispy }}
@@ -51,7 +55,7 @@
               <div class="comment_list">
                 {% for comment in video.vedio_comment.all %}
                <div class="vedio_comment">
-                 <h1><strong>{{ forloop.counter }} .</strong></h1>
+                 <!-- <h1><strong>{{ forloop.counter }} .</strong></h1> -->
                   <strong>Time: {{ comment.date }}</strong>
                 <h4 class="user_comment_name">
 

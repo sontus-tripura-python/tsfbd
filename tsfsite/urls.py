@@ -32,6 +32,7 @@ urlpatterns = [
     path('', include('About_app.urls')),
     path('', include('CommitteApp.urls')),
     path('', include('Photo_app.urls')),
+    path('', include('Notice.urls')),
     path('ckeditor', include('ckeditor_uploader.urls')),
     # third part link
     path('register/', user_views.register, name='register'),

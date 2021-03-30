@@ -49,11 +49,299 @@
    .slider-container{
        height: 300px;
    }
+   .slider-container .content {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .tsf_name_title{
+    font-size: 16px;
+  }
 /* leader section css-- */
 .details_title{
     font-size: 14px;
   }
   .add_button{
       margin-top: 5px;
+  }
+  .co_ordinator_section{
+    margin-bottom: 30px;
+  }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 400px) {
+      .logoheder{
+        height: 100px;
+    } 
+
+    .tsf-text-box{
+        margin-left: -5px;
+        text-align: justify;
+        width: 68%;
+        float: left;
+      }
+    .tsf_logo_banner{
+        height: 60px;
+        margin-left: -5px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    .banner_text{
+        margin-left: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 10px;
+   font-weight: bolder;
+        margin-top: 10px;
+      }
+      .tsf-logo-box{
+     /* text-align: center; */
+      float: left;
+      width: 10%;
+        
+       
+      }
+      .tsf_flag_banner{
+        height: 60px;
+        width: 80px;
+        margin-left: -5px;
+      }
+      .tsf-flag-box{
+        text-align: center;
+        float: left;
+        width: 8%;
+      }
+
+      .silde_img{
+        height: 300px;
+        width: 100%;
+       
+      }
+   .slider-container{
+       height: 300px;
+   }
+   .slider-container .content {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .tsf_name_title{
+    font-size: 16px;
+  }
+/* leader section css-- */
+.details_title{
+    font-size: 14px;
+  }
+  .add_button{
+      margin-top: 5px;
+  }
+  .co_ordinator_section{
+    margin-bottom: 30px;
+  }
+    }
+
+    @media only screen and (min-width: 401px) and (max-width: 460px) {
+      .logoheder{
+        height: 100px;
+    } 
+
+    .tsf-text-box{
+        margin-left: -5px;
+        text-align: justify;
+        width: 68%;
+        float: left;
+      }
+    .tsf_logo_banner{
+        height: 60px;
+        margin-left: -5px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    .banner_text{
+        margin-left: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .tsf-logo-box{
+     /* text-align: center; */
+      float: left;
+      width: 10%;
+        
+       
+      }
+      .tsf_flag_banner{
+        height: 60px;
+        width: 80px;
+        margin-left: -5px;
+      }
+      .tsf-flag-box{
+        text-align: center;
+        float: left;
+        width: 8%;
+      }
+
+      .silde_img{
+        height: 300px;
+        width: 100%;
+       
+      }
+   .slider-container{
+       height: 300px;
+   }
+   .slider-container .content {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .tsf_name_title{
+    font-size: 16px;
+  }
+/* leader section css-- */
+.details_title{
+    font-size: 14px;
+  }
+  .add_button{
+      margin-top: 5px;
+  }
+  .co_ordinator_section{
+    margin-bottom: 30px;
+  }
+    }
+
+    @media only screen and (min-width: 461px) and (max-width: 520px) {
+      .logoheder{
+        height: 100px;
+    } 
+
+    .tsf-text-box{
+        margin-left: -5px;
+        text-align: justify;
+        width: 68%;
+        float: left;
+      }
+    .tsf_logo_banner{
+        height: 60px;
+        margin-left: -5px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    .banner_text{
+        margin-left: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .tsf-logo-box{
+     /* text-align: center; */
+      float: left;
+      width: 10%;
+        
+       
+      }
+      .tsf_flag_banner{
+        height: 60px;
+        width: 80px;
+        margin-left: -5px;
+      }
+      .tsf-flag-box{
+        text-align: center;
+        float: left;
+        width: 8%;
+      }
+
+      .silde_img{
+        height: 300px;
+        width: 100%;
+       
+      }
+   .slider-container{
+       height: 300px;
+   }
+   .slider-container .content {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .tsf_name_title{
+    font-size: 16px;
+  }
+/* leader section css-- */
+.details_title{
+    font-size: 14px;
+  }
+  .add_button{
+      margin-top: 5px;
+  }
+  .co_ordinator_section{
+    margin-bottom: 30px;
+  }
+    }
+    @media only screen and (min-width: 521px) and (max-width: 720px) {
+      .logoheder{
+        height: 100px;
+    } 
+
+    .tsf-text-box{
+        margin-left: -5px;
+        text-align: justify;
+        width: 68%;
+        float: left;
+      }
+    .tsf_logo_banner{
+        height: 60px;
+        margin-left: -5px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    .banner_text{
+        margin-left: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .tsf-logo-box{
+     /* text-align: center; */
+      float: left;
+      width: 10%;
+        
+       
+      }
+      .tsf_flag_banner{
+        height: 60px;
+        width: 80px;
+      }
+      .tsf-flag-box{
+        text-align: center;
+        float: left;
+        width: 8%;
+      }
+
+      .silde_img{
+        height: 300px;
+        width: 100%;
+       
+      }
+   .slider-container{
+       height: 300px;
+   }
+   .slider-container .content {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .tsf_name_title{
+    font-size: 16px;
+  }
+/* leader section css-- */
+.details_title{
+    font-size: 14px;
+  }
+  .add_button{
+      margin-top: 5px;
+  }
+  .co_ordinator_section{
+    margin-bottom: 30px;
   }
     }

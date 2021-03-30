@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from Photo_app.models import *
-def gallery(request):
+def gallery(request, pk=None):
     category = request.GET.get('category')
     if category == None:
         photos = Photo.objects.all()
+        if pk:
+           photos = get_object_or_404(photos, pk=pk) 
     else:
         photos = Photo.objects.filter(category__name=category)
 

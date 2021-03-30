@@ -24,38 +24,6 @@ body{
   padding: 5px;
   height: 50px;
 }
-.loader{
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #56d782;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.loader.hidden{
-  animation: fadeOut 3s;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeOut {
-  100%{
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-.preloading{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  animation: loader 2s linear infinite;
-}
-@keyframes loader {
-  from { transform: rotate(0deg);}
-  to { transform: rotate(360deg);}
-}
 a:hover{
   text-decoration: none;
 }

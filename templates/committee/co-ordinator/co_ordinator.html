@@ -1,10 +1,16 @@
 {% extends 'home/base.html' %}
 {% load static %}
+<title>
+  {% block title %}
+Tsfbd -Co-ordinator list
+{% endblock%}
+</title>
+
 {% block body %}
 
 <section class="branch_name_list_section">
   <div class="container">
-    <h1 class="tsf_name_title">Tripura student Forum, BANGLADESH <br> Co-ordinator</h1>
+    <h1 class="branch_heading_title"> Co-ordinator list </h1> 
     <div class="text-center">
       {% if user.is_superuser %}
       <a href="{% url 'coordinator_create' %}" class="btn btn-outline-info text-center">Add Co-ordinator</a>
