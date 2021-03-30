@@ -22,6 +22,6 @@ class Photo(models.Model):
         img = Image.open(self.image.path)
         
         if img.height > 400 or img.width > 500:
-            output_size =(400, 300)
+            output_size =(400, 500)
             img.thumbnail(output_size)
             img.save(self.image.path)
