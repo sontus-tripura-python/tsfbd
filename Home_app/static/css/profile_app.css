@@ -62,15 +62,7 @@
   text-transform: capitalize;
   font-weight: bold;
 }
-.name_of_profile{
-  font-weight: bold;
- 
-  font-size: 18px;
-}
-.title_name{
-  font-weight: bold;
-  font-size: 18px;
-}
+
 .current_enroll{
   color: green;
   font-size: 18px;
@@ -205,4 +197,14 @@
 .input_pass:focus {
   box-shadow: none !important;
   outline: 0px !important;
+}
+
+.registration_title{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.register_box{
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
