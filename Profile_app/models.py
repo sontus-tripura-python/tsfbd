@@ -13,7 +13,7 @@ class StudentCategory(models.Model):
 class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField(default='default.jpg', upload_to='profile_pic', blank=True)
+    photo = models.ImageField(default='default.jpg', upload_to='profile_pic')
     university = models.CharField(max_length=100, blank=True)
     School = models.CharField(max_length=100, blank=True)
     college = models.CharField(max_length=100, blank=True)
@@ -39,16 +39,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
-
-    def save(self):
-        super().save()
-
-        img = Image.open(self.photo.path)
-        
-        if img.height > 200 or img.width > 200:
-            output_size =(200, 200)
-            img.thumbnail(output_size)
-            img.save(self.photo.path)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):

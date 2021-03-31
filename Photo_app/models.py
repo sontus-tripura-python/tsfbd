@@ -15,13 +15,3 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.description
-
-    def save(self):
-        super().save()
-
-        img = Image.open(self.image.path)
-        
-        if img.height > 400 or img.width > 500:
-            output_size =(400, 500)
-            img.thumbnail(output_size)
-            img.save(self.image.path)

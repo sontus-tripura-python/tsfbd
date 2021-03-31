@@ -11,11 +11,11 @@ class TsfAboutSetting(models.Model):
     tsf_address = models.TextField(blank=True)
     tsf_about = models.TextField(blank=True)
     tsf_president_name = models.CharField(max_length=255, blank=True)
-    tsf_president_photo = models.ImageField(upload_to='president_photo', blank=True)
+    tsf_president_photo = models.ImageField(upload_to='president_photo')
     tsf_president_title = models.CharField(max_length=255, blank=True)
     tsf_president_about = models.TextField(blank=True)
     tsf_secretary_name = models.CharField(max_length=255, blank=True)
-    tsf_secretary_photo = models.ImageField(upload_to='secretary_photo', blank=True)
+    tsf_secretary_photo = models.ImageField(upload_to='secretary_photo')
     tsf_secretary_title = models.CharField(max_length=255, blank=True)
     tsf_secretary_about = models.TextField(blank=True)
     tsf_fb_link = models.URLField(max_length=255, blank=True)
@@ -26,16 +26,6 @@ class TsfAboutSetting(models.Model):
 
     def __str__(self):
         return f"{self.tsf_greeting} of tsf"
-    
-    def save(self):
-        super().save()
-
-        img = Image.open(self.tsf_president_photo.path)
-        
-        if img.height > 300 or img.width > 300:
-            output_size =(300, 300)
-            img.thumbnail(output_size)
-            img.save(self.tsf_president_photo.path)
 
     class Meta:
         verbose_name_plural = "TSF ABOUT"
@@ -69,13 +59,3 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.title
-
-    def save(self):
-        super().save()
-
-        img = Image.open(self.silder_image.path)
-        
-        if img.height > 420 or img.width > 500:
-            output_size =(420, 500)
-            img.thumbnail(output_size)
-            img.save(self.silder_image.path)

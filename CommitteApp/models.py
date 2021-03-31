@@ -23,7 +23,7 @@ class CentralMember(models.Model):
     ('Other', 'Other'),
     )
     session = models.ForeignKey(CentralYear, on_delete=models.CASCADE)
-    photo = models.ImageField(default='default.jpg', upload_to='central')
+    photo = models.ImageField(upload_to='central')
     name = models.CharField(max_length=50)
     slug = AutoSlugField(populate_from='name')
     position = models.CharField(max_length=50)
@@ -41,16 +41,6 @@ class CentralMember(models.Model):
 
     def __str__(self):
         return self.name
-
-    def save(self):
-        super().save()
-
-        img = Image.open(self.photo.path)
-
-        if img.height > 200 or img.width > 200:
-            output_size =(200, 200)
-            img.thumbnail(output_size)
-            img.save(self.photo.path)
 
     class Meta:
         verbose_name_plural = 'Central Member'
@@ -96,7 +86,7 @@ class BranchMember(models.Model):
     ('Other', 'Other'),
     )
     branch_year = models.ForeignKey(BranchYear, on_delete=models.CASCADE, related_name='branch_years')
-    photo = models.ImageField(default='default.jpg', upload_to='branchmember', blank=True)
+    photo = models.ImageField(upload_to='branchmember', blank=True)
     University = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=50, blank=True)
     slug = AutoSlugField(populate_from='name')
@@ -117,19 +107,19 @@ class BranchMember(models.Model):
     def __str__(self):
         return f"{self.name } of {self.branch_year}"
 
-    def save(self):
-        super().save()
+    # def save(self):
+    #     super().save()
 
-        img = Image.open(self.photo.path)
+    #     img = Image.open(self.photo.path)
         
-        if img.height > 200 or img.width > 200:
-            output_size =(200, 200)
-            img.thumbnail(output_size)
-            img.save(self.photo.path)
+    #     if img.height > 200 or img.width > 200:
+    #         output_size =(200, 200)
+    #         img.thumbnail(output_size)
+    #         img.save(self.photo.path)
 
 
 class Coordinator(models.Model):
-    photo = models.ImageField(default='default.jpg', upload_to='branchmember', blank=True)
+    photo = models.ImageField(upload_to='branchmember', blank=True)
     name = models.CharField(max_length=50, blank=True)
     slug = AutoSlugField(populate_from='name')
     position = models.CharField(max_length=200, blank=True)
@@ -141,16 +131,6 @@ class Coordinator(models.Model):
 
     def __str__(self):
         return self.name
-    
-    def save(self):
-        super().save()
-
-        img = Image.open(self.photo.path)
-        
-        if img.height > 200 or img.width > 200:
-            output_size =(200, 200)
-            img.thumbnail(output_size)
-            img.save(self.photo.path)
 
     class Meta:
         verbose_name_plural = "Co-ordinator"
