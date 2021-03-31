@@ -62,7 +62,13 @@
   text-transform: capitalize;
   font-weight: bold;
 }
-
+.title_name{
+  font-weight: bold;
+  font-size: 18px;
+}
+.name_of_profile{
+  font-size: 16px;
+}
 .current_enroll{
   color: green;
   font-size: 18px;
