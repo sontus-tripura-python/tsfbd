@@ -30,7 +30,7 @@ Tsfbd-Branch {{ branch_years }}
       <div class="col-12 col-sm-6 col-md-3 col-lg-3">
         <div class="our-team">
           <div class="member_profile_box">
-            <img   src="{{ member.photo.url }}" class="img-fluid rounded-circle member_profile_pic">
+            <img   src=" {% if member.photo %}{{ member.photo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" class="img-fluid rounded-circle member_profile_pic">
           </div>
           <p class="member_name"><a href="{% url 'branch_leader_details' member.slug member.pk %}">{{ member.name }}</a></p>
           <p class="member_position badge badge-warning">{{ member.position}}</p>

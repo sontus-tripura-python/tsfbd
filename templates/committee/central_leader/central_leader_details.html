@@ -17,7 +17,7 @@ Tsfbd - details {{ centraldetail.name }}
 <a href="{% url 'central_leader_delete' centraldetail.slug centraldetail.pk %}" class="btn btn-danger">Delete</a>
 {% endif %}
 <div class="text-center">
-  <img src="{{centraldetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
+  <img src="{% if centraldetail.photo %}{{ centraldetail.photo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="" class="img-fluid leader_details_profile_pic">
   <h2 class="leaders_name">{{centraldetail.name }}</h2>
   <p class="member_position badge badge-warning">{{ centraldetail.position}}</p>
 </div>

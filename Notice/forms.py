@@ -1,6 +1,6 @@
 .from django import forms
 from Notice.models import *
-class NewsForm(forms.ModelForm):
+class NoticeBoardForm(forms.ModelForm):
     class Meta:
-        model = News
+        model = NoticeBoard
         fields = ['title', 'description', 'posted_name', 'facebook']

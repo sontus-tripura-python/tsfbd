@@ -1,0 +1,30 @@
+.notice_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.notice_board{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .notice_board:after{
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: #000;
+    margin: 5px auto;
+   
+  }
+  .paginator-section{
+      background-color: #f1f1f1;
+      margin: 5px;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+  }
+  .posted_name{
+      font-size: 18px;
+  }

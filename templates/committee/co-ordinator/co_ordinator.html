@@ -26,7 +26,7 @@ Tsfbd -Co-ordinator list
         <div class="card co_ordinator_section">
           <div class="card-body">
   <div class="co_ordinator_photo_section">
-    <img src="{{ coordinator.photo.url }}" alt="" class="co_ordinator_photo">
+    <img src="{% if coordinator.photo %}{{ coordinator.photo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}"  alt="" class="co_ordinator_photo">
   </div>
             <h2 class="sessions_year">
               <a href="{% url 'co_ordinator_details' coordinator.slug coordinator.pk %}" class="co_ordinator_name">{{ coordinator.name}}</a>

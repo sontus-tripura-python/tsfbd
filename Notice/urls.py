@@ -2,5 +2,5 @@ from django.urls import path
 from Notice import views
 
 urlpatterns = [
-    path('Notice/', views.notice_list, name='notice_list')
+    path('notice-create/', views.notice_create, name='notice_create')
 ]

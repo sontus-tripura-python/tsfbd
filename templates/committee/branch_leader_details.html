@@ -19,7 +19,7 @@ Tsfbd -{{Branchdetail.name }}
   <a href="{% url 'member_details_update' Branchdetail.slug Branchdetail.pk %}" class="btn btn-danger">Update</a>
   {% endif %}
 <div class="text-center">
-  <img src="{{Branchdetail.photo.url }}" alt="" class="img-fluid leader_details_profile_pic">
+  <img src="{% if Branchdetail.photo %}{{ Branchdetail.photo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="" class="img-fluid leader_details_profile_pic">
   <h2 class="leader_deatails_name">{{Branchdetail.name }}</h2>
   <h2 class="details_leader_postion_name"> {{Branchdetail.position }}</h2>
 </div>
