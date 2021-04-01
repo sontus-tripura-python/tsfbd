@@ -14,13 +14,13 @@ def home(request):
     lastes_news = News.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')[:4]
     context = {'student_categories':student_categories,
               'sliders': sliders, 'lastes_news': lastes_news }
+    
     return render(request, 'home_app/home.html', context)
 
 def studentscategory(request, pk):
     students = StudentCategory.objects.get(pk=pk)
     students_category = Profile.objects.all().filter(current_enroll__exact=students)
     students_category_count = Profile.objects.filter(current_enroll__exact=students).count()
-    # print("student", students_category_count)
     context = {'students': students,
     'students_category': students_category, 'students_category_count': students_category_count,}
     return render(request, 'home_app/students_categorys.html', context)
@@ -35,7 +35,6 @@ def search_students(request):
 
 
 def search_list_student(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     query = request.GET['query']
     allquery = Profile.objects.filter(user__first_name__icontains=query) | Profile.objects.filter(
                                                user__last_name__icontains = query) | Profile.objects.filter(
@@ -47,4 +46,4 @@ def search_list_student(request):
                                                        School__icontains=query
                                                    )
     return render(request, 'Profile_app/search.html',
-        context={'allquery': allquery, 'query': query,'about_inform':about_inform, })
+        context={'allquery': allquery, 'query': query,})

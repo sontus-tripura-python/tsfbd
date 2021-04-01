@@ -38,7 +38,7 @@ class Profile(models.Model):
     linkdin = models.URLField(blank=True)
 
     def __str__(self):
-        return f"{self.user.username} of name  {self.user.first_name} {self.user.last_name}"
+        return self.user.username
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):

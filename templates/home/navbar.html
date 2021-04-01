@@ -109,36 +109,7 @@
         {% endfor %}
       </div>
 
-      <section class="paginator-section">
-        <div class="container text-center">
-          {% if notice_list.has_previous %}
-        
-         <a class="btn btn-outline-primary" href="?page={{ notice_list.previous_page_number}}">
-        Previous
-         </a>
-           <a class="btn btn-outline-primary" href="?page=1">First</a>
-        
-        {% endif %}
-          {% for page in notice_list.paginator.page_range %}
-          {% if notice_list.number == page %}
-        <a class=" btn btn-primary" href="?page={{ page }}">{{ page }}</a>
-          {% elif page > notice_list.number|add:'-1' and  page > notice_list.number|add:'1' %}
-          <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
-          {% else %}
-          <a class="btn btn-outline-primary" href="?page={{ page }}">{{ page }}</a>
-          {% endif %}
-          {% endfor %}
-          {% if notice_list.has_next %}
-        
-        
-              <a class="btn btn-outline-primary" href="?page={{ notice_list.paginator.num_pages }}">
-              Next
-              </a>
-              <a class="btn btn-outline-primary" href="?page={{ notice_list.next_page_number}}">Last </a>
-        
-            {% endif %}
-        </div>
-        </section>
+     
   </div>
 </div>
 </div>

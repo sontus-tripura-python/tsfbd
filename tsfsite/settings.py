@@ -88,7 +88,6 @@ TEMPLATES = [
                 'Home_app.context_processors.developer_info',
                 'About_app.context_processors.about_categories',
                 'Notice.context_processors.notice_list',
-                'Notice.context_processors.news_draft',
             ],
         },
     },
