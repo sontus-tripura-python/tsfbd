@@ -25,7 +25,7 @@ Tsfbd-Branch {{ branch_years }}
     {% include 'home/messeage.html' %}
     <div class="row justify-content-center">
       
-  {% for member in members %}
+  <!-- {% for member in members %}
 
       <div class="col-12 col-sm-6 col-md-3 col-lg-3">
         <div class="our-team">
@@ -42,12 +42,29 @@ Tsfbd-Branch {{ branch_years }}
       <div class="alert alert-danger" role="alert">
         Not added yet..thank you    
         </div>
-      {% endfor %}
+      {% endfor %} -->
 
-       
+      {% for member in members %}
+      <a href="{% url 'branch_leader_details' member.slug member.pk %}">
+        <div class="leader-box">
+            <img src=" {% if member.photo %}{{ member.photo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="" class="img-fluid leader-image">
+      
+          <div class="name-box">
+            <h2 class="names">{{ member.name }}</h2>
+          </div>
+          <div class="positon-box">
+           <h3>{{ member.position}}</h3>
+          </div>
+      </div>
+      </a>
+      {% empty %}
+      <div class="alert alert-danger" role="alert">
+        Not added yet..thank you    
+        </div>
+      {% endfor %}
     </div>
   </div>
+
+
 </section>
-
-
 {% endblock %}

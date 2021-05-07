@@ -159,7 +159,7 @@ def member_details_update(request, slug, pk):
     else:
         form = MemberAddForm(instance=member)
     context = { 'form': form,}
-    return render(request, 'Leader_app/add_member_form.html', context)
+    return render(request, 'committee/branch_member_form.html', context)
 
 def branch_member_delete(request, slug, pk):
     member = get_object_or_404(BranchMember, slug=slug, pk=pk)

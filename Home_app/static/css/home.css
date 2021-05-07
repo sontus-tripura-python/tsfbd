@@ -52,7 +52,8 @@ min-height: 700px;
   background: #fff;
   overflow: hidden;
   border-radius:10px 10px 0px 0px;
-  box-shadow: 2px 3px 2px 3px #ccc;
+  /* box-shadow: 2px 3px 2px 3px #ccc; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   
    
 }
@@ -221,13 +222,14 @@ font-weight: bold;
 .tsf_leader_profile_img{
   height: 200px;
   width: 200px;
-  border: 1px solid #222;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: all 0.5s;
   cursor: pointer;
 }
 .tsf_leader_profile_img:hover{
   transform: scale(1.05);
-    box-shadow: 5px 5px 10px rgba(0, 0,0,0.1), -5px -5px 10px #fff; 
+    /* box-shadow: 5px 5px 10px rgba(0, 0,0,0.1), -5px -5px 10px #fff;  */
     cursor: pointer;
 }
 .tsf_leader_name{

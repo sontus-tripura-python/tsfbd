@@ -61,23 +61,6 @@ margin-bottom: 5px;
   transition: ease-in-out;
 }
 
-
-.our-team {
-  padding: 30px 0 40px;
-  margin-top: 5px;
-   margin-bottom: 30px;
-   background-color: #155E6A;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  height: 200px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.our-team:hover{
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-}
 .member_profile_box{
   display: inline-block;
   height: 80px;
@@ -319,4 +302,55 @@ text-decoration: none;
 }
 .profilenavbar{
   background: #2f8ea4;
+}
+
+
+
+
+.leader-box{
+  min-height: 120px;
+  min-width: 220px;
+  text-align: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+transition: all ease-in-out;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.leader-image{
+  border: 1px solid #fff;
+ height: 80px;
+ width: 80px;
+  border-radius: 50%;
+}
+.name-box{
+  margin: 0px;
+  background-color: #fff;
+  height: 30px;
+  /* border-radius: 10px; */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  
+}
+.names{
+  font-size: 18px;
+  font-weight: bold;
+  color: #000!important;
+  text-transform: capitalize;
+}
+.positon-box{
+ padding: 2px;
+  background: green;
+}
+.positon-box h3{
+  color: #fff;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.leader-box:hover{
+  border: 1px solid #ddd;
+  background: #2f8ea4;
+ border-radius: 5px;
+ transform: scale(1.0);
 }

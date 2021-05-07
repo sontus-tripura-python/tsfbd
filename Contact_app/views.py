@@ -3,7 +3,6 @@ from django.contrib import messages
 from Contact_app.models import *
 from Home_app.models import *
 def contact(request):
-    about_inform = TsfAboutSetting.objects.get(id=1)
     if request.method == 'POST':
         name =request.POST['name']
         email =request.POST['email']
@@ -16,4 +15,4 @@ def contact(request):
             messages.success(request, " thank you ! Your message has been sent successfully. we will contact with you soon ")
         contact = Contact( name=name, email=email, message=message, phone=phone)
         contact.save()
-    return render(request, 'contact_app/contact.html', context={'about_inform': about_inform})
+    return render(request, 'contact_app/contact.html',)
