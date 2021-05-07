@@ -13,16 +13,29 @@ Tsfbd - all student
     <div class="membership_section">
       <ul class="list-group list_group">
         <li class="list-group-item ">
-          <h2 class="total_members">Total Members : {{ profile_count }}</h2>
-   
+      
+              
              
-          <form action="/student-seach/">
-            {% csrf_token %}
-            <input type="search" class="search_input" placeholder="Search" name="query" id="searchField" aria-label="Search">
-          <button type="submit" class="btn btn-outline-info"> Submit
-          </button>
-          </form>
-            
+        
+         
+              <form class="form-inline mt-3" action="/student-seach/">
+                {% csrf_token %}
+                <div class="form-group mb-2">
+                  <button type="button" class="btn btn-primary">
+                    Total Students <span class="badge badge-light"> {{ profile_count }}</span>
+                  </button>
+                </div>
+
+                <div class="form-group mx-sm-3 mb-2">
+                 
+                  <input type="text" class="form-control"  name="query" id="inputText" placeholder="Search Here" required>
+                </div>
+                <button type="submit" class="btn btn-outline-primary mb-2">Submit</button>
+              </form>
+             
+      
+     
+  
         </li>
       </ul>
 <div class="user-table">
